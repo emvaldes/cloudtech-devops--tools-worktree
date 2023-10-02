@@ -1,0 +1,52 @@
+{
+    "buckets": {
+        "id": "buckets",
+        "dirs": [
+            {
+                "id": "data",
+                "name": "data",
+                "size":"0 bytes",
+                "dirs": [
+                    {
+                        "id": "exports",
+                        "name": "exports",
+                        "size":"0 bytes",
+                        "dirs": [],
+                        "files": []
+                    },
+                    {
+                        "id": "imports",
+                        "name": "imports",
+                        "size":"0 bytes",
+                        "dirs": [],
+                        "files": []
+                    },
+                    {
+                        "id": "reports",
+                        "name": "reports",
+                        "size":"0 bytes",
+                        "dirs": [],
+                        "files": []
+                    }
+                ],
+                "files": []
+            },
+            {
+                "id": "tests",
+                "name": "tests",
+                "size":"0 bytes",
+                "dirs": [
+                    {
+                        "id": "configs",
+                        "name": "configs",
+                        "size":"0 bytes",
+                        "dirs": [],
+                        "files": []
+                    }        
+                ],
+                "files": []
+            }
+        ],
+        "files": []
+    }
+}

@@ -1,0 +1,1816 @@
+Timestamp: 231112-165552
+
+PyLint Defaults:
+['--verbose', '--rcfile=.pylint.rc', '--output-format=parseable', '--reports=no']
+PyLint Report Path: docs/linting/pylint
+PyLint Targets: [{'folder': 'core', 'item': 'core'}, {'folder': 'app', 'item': 'app'}, {'folder': 'tests', 'item': 'tests'}]
+Coverage PyDoc Path: docs/linting/pylint/core
+PyLint Command [ app_class.py ]:
+pylint core/classes/app_class.py --verbose --rcfile=.pylint.rc --output-format=parseable --reports=no
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+PyLint Command [ bucket_class.py ]:
+pylint core/classes/bucket_class.py --verbose --rcfile=.pylint.rc --output-format=parseable --reports=no
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+PyLint Command [ config_class.py ]:
+pylint core/classes/config_class.py --verbose --rcfile=.pylint.rc --output-format=parseable --reports=no
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+PyLint Command [ core_class.py ]:
+pylint core/classes/core_class.py --verbose --rcfile=.pylint.rc --output-format=parseable --reports=no
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+PyLint Command [ helper_class.py ]:
+pylint core/classes/helper_class.py --verbose --rcfile=.pylint.rc --output-format=parseable --reports=no
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+PyLint Command [ json_class.py ]:
+pylint core/classes/json_class.py --verbose --rcfile=.pylint.rc --output-format=parseable --reports=no
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+PyLint Command [ core_module.py ]:
+pylint core/core_module.py --verbose --rcfile=.pylint.rc --output-format=parseable --reports=no
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+PyLint Command [ core_parser.py ]:
+pylint core/core_parser.py --verbose --rcfile=.pylint.rc --output-format=parseable --reports=no
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+PyLint Command [ core_toolset.py ]:
+pylint core/core_toolset.py --verbose --rcfile=.pylint.rc --output-format=parseable --reports=no
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+PyLint Command [ sharepoint.py ]:
+pylint core/modules/storage/sharepoint.py --verbose --rcfile=.pylint.rc --output-format=parseable --reports=no
+************* Module storage.sharepoint
+core/modules/storage/sharepoint.py:27: [R0904(too-many-public-methods), SharePoint] Too many public methods (22/20)
+
+------------------------------------------------------------------
+Your code has been rated at 9.98/10 (previous run: 9.98/10, +0.00)
+Coverage PyDoc Path: docs/linting/pylint/app
+PyLint Command [ mod_classes.py ]:
+pylint app/mod_classes.py --verbose --rcfile=.pylint.rc --output-format=parseable --reports=no
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+PyLint Command [ mod_project.py ]:
+pylint app/mod_project.py --verbose --rcfile=.pylint.rc --output-format=parseable --reports=no
+************* Module app.mod_project
+app/mod_project.py:16: [R0915(too-many-statements), main] Too many statements (51/50)
+
+------------------------------------------------------------------
+Your code has been rated at 9.82/10 (previous run: 9.82/10, +0.00)
+Coverage PyDoc Path: docs/linting/pylint/tests
+PyLint Command [ conftest.py ]:
+pylint tests/conftest.py --verbose --rcfile=.pylint.rc --output-format=parseable --reports=no
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+PyLint Command [ test__core_module.py ]:
+pylint tests/test__core_module.py --verbose --rcfile=.pylint.rc --output-format=parseable --reports=no
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+PyLint Command [ test__mod_project.py ]:
+pylint tests/test__mod_project.py --verbose --rcfile=.pylint.rc --output-format=parseable --reports=no
+
+PyTest Report Path:
+docs/testing/pytest
+PyTest Command [ conftest.py ]:
+pytest tests/conftest.py --verbose
+============================= test session starts ==============================
+platform darwin -- Python 3.11.6, pytest-7.4.2, pluggy-1.2.0 -- /usr/local/opt/python@3.11/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /Users/emvaldes/.repos/devops/framework/worktree
+plugins: cov-4.1.0
+collecting ... collected 0 items
+
+============================ no tests ran in 0.00s =============================
+PyTest Command [ test__core_module.py ]:
+pytest tests/test__core_module.py --verbose
+============================= test session starts ==============================
+platform darwin -- Python 3.11.6, pytest-7.4.2, pluggy-1.2.0 -- /usr/local/opt/python@3.11/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /Users/emvaldes/.repos/devops/framework/worktree
+plugins: cov-4.1.0
+collecting ... collected 4 items
+
+tests/test__core_module.py::test__display_help PASSED                    [ 25%]
+tests/test__core_module.py::test__user_input PASSED                      [ 50%]
+tests/test__core_module.py::test__load_script PASSED                     [ 75%]
+tests/test__core_module.py::test__module PASSED                          [100%]
+
+============================== 4 passed in 0.02s ===============================
+PyTest Command [ test__mod_project.py ]:
+pytest tests/test__mod_project.py --verbose
+============================= test session starts ==============================
+platform darwin -- Python 3.11.6, pytest-7.4.2, pluggy-1.2.0 -- /usr/local/opt/python@3.11/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /Users/emvaldes/.repos/devops/framework/worktree
+plugins: cov-4.1.0
+collecting ... collected 0 items
+
+============================ no tests ran in 0.00s =============================
+Coverage Project Report: docs/coverage
+Coverage Project Files: [{'file': 'project.py', 'log': 'project.log'}]
+Coverage Command [ project.log ]:
+coverage run project.py --verbose
+
+Coverage Command coverage report --show-missing
+Coverage Report File: docs/coverage/project.logName                                                                                                                             Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+app/__init__.py                                                                                                                      0      0   100%
+app/mod_classes.py                                                                                                                 204    127    38%   59, 123, 151-154, 172-209, 225-281, 299-361, 394-396, 417-436, 450-475, 489-519, 548-550, 558-570, 587-621, 633-669, 682-734
+app/mod_project.py                                                                                                                  57     34    40%   41-69, 87, 91-95, 99-102, 107-108, 112-115, 123-130, 134, 139
+core/__init__.py                                                                                                                     0      0   100%
+core/classes/__init__.py                                                                                                             0      0   100%
+core/classes/app_class.py                                                                                                           56      5    91%   46-48, 61-65
+core/classes/bucket_class.py                                                                                                       164     39    76%   43, 195-197, 210-212, 245-256, 259, 265-278, 281, 284-286, 288-291, 348-349, 361, 364
+core/classes/config_class.py                                                                                                        14      1    93%   42
+core/classes/core_class.py                                                                                                         100     60    40%   59-61, 95-97, 117-141, 157-176, 192-204, 212-215, 229-233, 251-254, 260-263
+core/classes/helper_class.py                                                                                                        10      1    90%   37
+core/classes/json_class.py                                                                                                          43     16    63%   32, 56, 69-73, 81-84, 90-93, 110-114, 120-123, 129-132
+core/core_module.py                                                                                                                317    101    68%   40-42, 74-75, 92-93, 131-132, 194-200, 227-239, 255, 265-268, 349-355, 386-388, 403-407, 433-435, 453-457, 460, 478-485, 495-497, 517-519, 566-567, 603, 626-627, 631, 636-638, 676-677, 709-713, 729, 743, 750, 758, 788, 793-794, 845-847, 862-868, 885-901, 918-928
+core/core_parser.py                                                                                                                 47     17    64%   70-73, 80-87, 91, 109-111, 125, 156-165
+core/core_toolset.py                                                                                                               196     99    49%   38-54, 118-174, 199-214, 227-234, 251-280, 296-305, 329-332, 351-370, 395-396, 401, 423-424, 438, 462-471, 501-507, 513, 531-533, 600-604, 619-621
+core/modules/storage/__init__.py                                                                                                     0      0   100%
+core/modules/storage/sharepoint.py                                                                                                 459    401    13%   139-166, 180-231, 241-254, 266-280, 298-360, 374-432, 442-477, 487-514, 524-555, 569-597, 607-647, 657-725, 739-802, 812-911, 927-1010, 1020-1035, 1045-1113, 1123-1210, 1220-1291, 1304-1380, 1390-1459, 1469-1524, 1534-1584
+project.py                                                                                                                          28      8    71%   49, 75-81
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                                                            22618  15848    30%
+Coverage PyTest Report: docs/coverage
+Coverage PyTest Folders: [{'folder': 'core', 'item': 'core'}, {'folder': 'app', 'item': 'app'}, {'folder': 'tests', 'item': 'tests'}]
+Coverage PyTest Path: docs/coverage/html/core_mods
+PyTest Command [ core ]:
+pytest --cov-report html:docs/coverage/html/core_mods --cov core/ --verbose
+
+PyTest Mods Path: docs/coverage/mods
+Coverage Command coverage report --show-missing
+
+Coverage Report File: docs/coverage/mods/core_mods.logName                           Stmts   Miss  Cover   Missing
+------------------------------------------------------------
+core/__init__.py                   0      0   100%
+core/classes/__init__.py           0      0   100%
+core/classes/app_class.py         56     56     0%   3-165
+core/classes/bucket_class.py     164    164     0%   3-372
+core/classes/config_class.py      14     14     0%   3-52
+core/classes/core_class.py       100    100     0%   3-263
+core/classes/helper_class.py      10     10     0%   3-42
+core/classes/json_class.py        43     43     0%   3-132
+core/core_module.py              317    106    67%   40-42, 131-132, 215-270, 349-355, 386-388, 403-407, 433-435, 453-457, 460, 478-485, 495-497, 517-519, 566-567, 603, 626-627, 631, 636-638, 676-677, 709-713, 729, 743, 750, 758, 788, 793-794, 845-847, 862-868, 885-901, 918-928
+core/core_parser.py               47     17    64%   70-73, 80-87, 91, 109-111, 125, 156-165
+core/core_toolset.py             196    146    26%   38-54, 118-174, 199-214, 227-234, 251-280, 296-305, 329-332, 351-370, 389-443, 462-471, 492-537, 572-604
+------------------------------------------------------------
+TOTAL                            947    656    31%
+Coverage PyTest Path: docs/coverage/html/app_mods
+PyTest Command [ app ]:
+pytest --cov-report html:docs/coverage/html/app_mods --cov app/ --verbose
+
+PyTest Mods Path: docs/coverage/mods
+Coverage Command coverage report --show-missing
+
+Coverage Report File: docs/coverage/mods/app_mods.logName                 Stmts   Miss  Cover   Missing
+--------------------------------------------------
+app/__init__.py          0      0   100%
+app/mod_classes.py     204    204     0%   3-734
+app/mod_project.py      57     57     0%   4-144
+--------------------------------------------------
+TOTAL                  261    261     0%
+Coverage PyTest Path: docs/coverage/html/tests_mods
+PyTest Command [ tests ]:
+pytest --cov-report html:docs/coverage/html/tests_mods --cov tests/ --verbose
+
+PyTest Mods Path: docs/coverage/mods
+Coverage Command coverage report --show-missing
+
+Coverage Report File: docs/coverage/mods/tests_mods.logName                         Stmts   Miss  Cover   Missing
+----------------------------------------------------------
+tests/__init__.py                0      0   100%
+tests/conftest.py               36      6    83%   26, 47-48, 74, 85, 96
+tests/test__core_module.py      28      0   100%
+tests/test__mod_project.py       0      0   100%
+----------------------------------------------------------
+TOTAL                           64      6    91%
+Coverage PyDoc Report: docs/pydoc
+Coverage PyDoc Targets: [{'folder': 'core', 'item': 'core'}, {'folder': 'app', 'item': 'app'}, {'folder': 'tests', 'item': 'tests'}]
+Coverage PyDoc Path: docs/pydoc/core
+PyDoc Command [ app_class.py ]:
+python -m pydoc core/classes/app_class.py
+```console
+Help on module app_class:
+
+NAME
+    app_class - Core Class: AppConfig
+
+CLASSES
+    core.classes.config_class.ConfigClass(core.classes.helper_class.HelperClass, core.classes.bucket_class.BucketsClass)
+        AppConfig
+    
+    class AppConfig(core.classes.config_class.ConfigClass)
+     |  AppConfig(json_object: dict = None, trg_path: str = os.getcwd()) -> None
+     |  
+     |  Objective:  Construct AppConfig Class
+     |  Parameters: ConfigClass (core.classes.ConfigClass)
+     |  Returns:    None
+     |  
+     |  Method resolution order:
+     |      AppConfig
+     |      core.classes.config_class.ConfigClass
+     |      core.classes.helper_class.HelperClass
+     |      core.classes.bucket_class.BucketsClass
+     |      core.classes.core_class.CoreClass
+     |      builtins.object
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, json_object: dict = None, trg_path: str = os.getcwd()) -> None
+     |      Objective:  Initialize Class variables
+     |      Parameters:
+     |          json_object (dict) -> None
+     |          trg_path (str) -> os.getcwd()
+     |      Returns:    None
+     |  
+     |  export_project(self) -> bool
+     |      Objective:  Export Project Configurations
+     |      Parameters: None
+     |      Returns:    bool (True)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  args = None
+     |  
+     |  storage = None
+     |  
+     |  trg_path = None
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from core.classes.bucket_class.BucketsClass:
+     |  
+     |  create_buckets(self, bucket_path: str = None, bucket_type: str = None, verbose: bool = False) -> bool | int
+     |      Objective:  Create/Initialize (dirs, files, docs)
+     |      Parameters:
+     |          bucket_path  (str): Bucket path
+     |          bucket_type  (str): Bucket type (dirs, files, docs)
+     |          verbose     (bool): Verbose output
+     |      Returns:    True (bool) | bucket_size (int)
+     |  
+     |  load_buckets(self, bucket_type: str = None, bucket_conf: dict = None, bucket_path: str = None, create: bool = False) -> bool
+     |      Objective:  Construct Bucket (dirs, files, docs)
+     |      Parameters:
+     |          bucket_type  (str): Bucket type (dirs, files, docs)
+     |          bucket_conf (dict): Bucket configuration
+     |          bucket_path  (str): Bucket path
+     |          create      (bool): Create bucket
+     |      Returns:    True (bool)
+     |  
+     |  setup_buckets(self) -> bool
+     |      Objective:  Setup Buckets (dirs, files, docs)
+     |      Parameters: None
+     |      Returns:    True (bool)
+     |  
+     |  update_buckets(self, dictobj: dict = None, tracker: str = None, abspath: str = None) -> bool
+     |      Objective:  Update Buckets (dirs, files, docs)
+     |      Parameters:
+     |          dictobj (dict): Dictionary object
+     |          tracker  (str): Tracking path
+     |          abspath  (str): Absolute path
+     |      Returns:    True (bool)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from core.classes.core_class.CoreClass:
+     |  
+     |  add_key_dict(self, key: str, value: Any) -> None
+     |      Add item to dictionary
+     |  
+     |  get(self, key: str) -> Any
+     |      Get attribute
+     |  
+     |  get_all_dict(self) -> dict
+     |      Return dictionary of all attributes
+     |  
+     |  get_key_dict(self, key: str) -> Any
+     |      Get item from dictionary
+     |  
+     |  get_record(self: Any, obj: object = typing.Any, index: str = None, packed: bool = False) -> list | core.classes.json_class.JsonObject
+     |      Objective:  Returns record by key
+     |      Parameters:
+     |          obj    (object): Any Object
+     |          index     (str): Index
+     |          packed   (bool): Return dictionary
+     |      Returns:    record (List or JsonObject)
+     |  
+     |  get_value(self: Any, obj: object = typing.Any, index: str = None) -> str | None
+     |      Objective:  Getting Value by Key
+     |      Parameters:
+     |          obj   (object): Any Object
+     |          index    (str): Index
+     |      Returns:    value (str) | None
+     |  
+     |  has(self, key: str) -> bool
+     |      Check if attribute exists
+     |  
+     |  missing_config(self, warning: str = None, status: str = 'JSON Configuration was not found!') -> None
+     |      Objective:  Missing Configuration
+     |      Parameters:
+     |          warning (str): Warning message
+     |          status  (str): Status message
+     |      Returns:    sys.exit( warning )
+     |  
+     |  set(self, key: str, value: Any) -> None
+     |      Set attribute
+     |  
+     |  set_value(self: Any, obj: list, index: str = None) -> str | None
+     |      Objective:  Set Object Property
+     |      Parameters:
+     |          obj   (object): Any Object
+     |          index    (str): Index
+     |      Returns:    value (str) | None
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from core.classes.core_class.CoreClass:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from core.classes.core_class.CoreClass:
+     |  
+     |  __empty__ = ''
+     |  
+     |  __space__ = ' '
+     |  
+     |  buckets = None
+     |  
+     |  config = None
+     |  
+     |  input = None
+     |  
+     |  json = None
+     |  
+     |  output = None
+
+FILE
+    core/classes/app_class.py
+```
+PyDoc Command [ bucket_class.py ]:
+python -m pydoc core/classes/bucket_class.py
+```console
+Help on module bucket_class:
+
+NAME
+    bucket_class - Core Class: Bucket Class
+
+CLASSES
+    core.classes.core_class.CoreClass(builtins.object)
+        BucketsClass
+    
+    class BucketsClass(core.classes.core_class.CoreClass)
+     |  BucketsClass(json_object: dict = None) -> None
+     |  
+     |  Objective:  Construct Bucket Class (dirs, files, docs)
+     |  Parameters:
+     |      CoreClass (object)
+     |  Returns:    None
+     |  
+     |  Method resolution order:
+     |      BucketsClass
+     |      core.classes.core_class.CoreClass
+     |      builtins.object
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, json_object: dict = None) -> None
+     |      Objective:  Initialize Script Buckets
+     |      Parameters:
+     |          json_object (dict) -> None
+     |      Returns:    None
+     |  
+     |  create_buckets(self, bucket_path: str = None, bucket_type: str = None, verbose: bool = False) -> bool | int
+     |      Objective:  Create/Initialize (dirs, files, docs)
+     |      Parameters:
+     |          bucket_path  (str): Bucket path
+     |          bucket_type  (str): Bucket type (dirs, files, docs)
+     |          verbose     (bool): Verbose output
+     |      Returns:    True (bool) | bucket_size (int)
+     |  
+     |  load_buckets(self, bucket_type: str = None, bucket_conf: dict = None, bucket_path: str = None, create: bool = False) -> bool
+     |      Objective:  Construct Bucket (dirs, files, docs)
+     |      Parameters:
+     |          bucket_type  (str): Bucket type (dirs, files, docs)
+     |          bucket_conf (dict): Bucket configuration
+     |          bucket_path  (str): Bucket path
+     |          create      (bool): Create bucket
+     |      Returns:    True (bool)
+     |  
+     |  setup_buckets(self) -> bool
+     |      Objective:  Setup Buckets (dirs, files, docs)
+     |      Parameters: None
+     |      Returns:    True (bool)
+     |  
+     |  update_buckets(self, dictobj: dict = None, tracker: str = None, abspath: str = None) -> bool
+     |      Objective:  Update Buckets (dirs, files, docs)
+     |      Parameters:
+     |          dictobj (dict): Dictionary object
+     |          tracker  (str): Tracking path
+     |          abspath  (str): Absolute path
+     |      Returns:    True (bool)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from core.classes.core_class.CoreClass:
+     |  
+     |  add_key_dict(self, key: str, value: Any) -> None
+     |      Add item to dictionary
+     |  
+     |  get(self, key: str) -> Any
+     |      Get attribute
+     |  
+     |  get_all_dict(self) -> dict
+     |      Return dictionary of all attributes
+     |  
+     |  get_key_dict(self, key: str) -> Any
+     |      Get item from dictionary
+     |  
+     |  get_record(self: Any, obj: object = typing.Any, index: str = None, packed: bool = False) -> list | core.classes.json_class.JsonObject
+     |      Objective:  Returns record by key
+     |      Parameters:
+     |          obj    (object): Any Object
+     |          index     (str): Index
+     |          packed   (bool): Return dictionary
+     |      Returns:    record (List or JsonObject)
+     |  
+     |  get_value(self: Any, obj: object = typing.Any, index: str = None) -> str | None
+     |      Objective:  Getting Value by Key
+     |      Parameters:
+     |          obj   (object): Any Object
+     |          index    (str): Index
+     |      Returns:    value (str) | None
+     |  
+     |  has(self, key: str) -> bool
+     |      Check if attribute exists
+     |  
+     |  missing_config(self, warning: str = None, status: str = 'JSON Configuration was not found!') -> None
+     |      Objective:  Missing Configuration
+     |      Parameters:
+     |          warning (str): Warning message
+     |          status  (str): Status message
+     |      Returns:    sys.exit( warning )
+     |  
+     |  set(self, key: str, value: Any) -> None
+     |      Set attribute
+     |  
+     |  set_value(self: Any, obj: list, index: str = None) -> str | None
+     |      Objective:  Set Object Property
+     |      Parameters:
+     |          obj   (object): Any Object
+     |          index    (str): Index
+     |      Returns:    value (str) | None
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from core.classes.core_class.CoreClass:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from core.classes.core_class.CoreClass:
+     |  
+     |  __empty__ = ''
+     |  
+     |  __space__ = ' '
+     |  
+     |  buckets = None
+     |  
+     |  config = None
+     |  
+     |  input = None
+     |  
+     |  json = None
+     |  
+     |  output = None
+
+FILE
+    core/classes/bucket_class.py
+```
+PyDoc Command [ config_class.py ]:
+python -m pydoc core/classes/config_class.py
+```console
+Help on module config_class:
+
+NAME
+    config_class - Core Class: ConfigClass
+
+CLASSES
+    core.classes.bucket_class.BucketsClass(core.classes.core_class.CoreClass)
+        ConfigClass(core.classes.helper_class.HelperClass, core.classes.bucket_class.BucketsClass)
+    core.classes.helper_class.HelperClass(core.classes.core_class.CoreClass)
+        ConfigClass(core.classes.helper_class.HelperClass, core.classes.bucket_class.BucketsClass)
+    
+    class ConfigClass(core.classes.helper_class.HelperClass, core.classes.bucket_class.BucketsClass)
+     |  ConfigClass(json_object: dict = None) -> None
+     |  
+     |  Objective:  Construct Multiple-Inheritance
+     |  Parameters:
+     |      HelperClass (object)
+     |      BucketsClass (object)
+     |  Returns:    None
+     |  
+     |  Method resolution order:
+     |      ConfigClass
+     |      core.classes.helper_class.HelperClass
+     |      core.classes.bucket_class.BucketsClass
+     |      core.classes.core_class.CoreClass
+     |      builtins.object
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, json_object: dict = None) -> None
+     |      Objective:  Initialize Class variables
+     |      Parameters:
+     |          json_object (dict) -> None
+     |      Returns:    None
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from core.classes.bucket_class.BucketsClass:
+     |  
+     |  create_buckets(self, bucket_path: str = None, bucket_type: str = None, verbose: bool = False) -> bool | int
+     |      Objective:  Create/Initialize (dirs, files, docs)
+     |      Parameters:
+     |          bucket_path  (str): Bucket path
+     |          bucket_type  (str): Bucket type (dirs, files, docs)
+     |          verbose     (bool): Verbose output
+     |      Returns:    True (bool) | bucket_size (int)
+     |  
+     |  load_buckets(self, bucket_type: str = None, bucket_conf: dict = None, bucket_path: str = None, create: bool = False) -> bool
+     |      Objective:  Construct Bucket (dirs, files, docs)
+     |      Parameters:
+     |          bucket_type  (str): Bucket type (dirs, files, docs)
+     |          bucket_conf (dict): Bucket configuration
+     |          bucket_path  (str): Bucket path
+     |          create      (bool): Create bucket
+     |      Returns:    True (bool)
+     |  
+     |  setup_buckets(self) -> bool
+     |      Objective:  Setup Buckets (dirs, files, docs)
+     |      Parameters: None
+     |      Returns:    True (bool)
+     |  
+     |  update_buckets(self, dictobj: dict = None, tracker: str = None, abspath: str = None) -> bool
+     |      Objective:  Update Buckets (dirs, files, docs)
+     |      Parameters:
+     |          dictobj (dict): Dictionary object
+     |          tracker  (str): Tracking path
+     |          abspath  (str): Absolute path
+     |      Returns:    True (bool)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from core.classes.core_class.CoreClass:
+     |  
+     |  add_key_dict(self, key: str, value: Any) -> None
+     |      Add item to dictionary
+     |  
+     |  get(self, key: str) -> Any
+     |      Get attribute
+     |  
+     |  get_all_dict(self) -> dict
+     |      Return dictionary of all attributes
+     |  
+     |  get_key_dict(self, key: str) -> Any
+     |      Get item from dictionary
+     |  
+     |  get_record(self: Any, obj: object = typing.Any, index: str = None, packed: bool = False) -> list | core.classes.json_class.JsonObject
+     |      Objective:  Returns record by key
+     |      Parameters:
+     |          obj    (object): Any Object
+     |          index     (str): Index
+     |          packed   (bool): Return dictionary
+     |      Returns:    record (List or JsonObject)
+     |  
+     |  get_value(self: Any, obj: object = typing.Any, index: str = None) -> str | None
+     |      Objective:  Getting Value by Key
+     |      Parameters:
+     |          obj   (object): Any Object
+     |          index    (str): Index
+     |      Returns:    value (str) | None
+     |  
+     |  has(self, key: str) -> bool
+     |      Check if attribute exists
+     |  
+     |  missing_config(self, warning: str = None, status: str = 'JSON Configuration was not found!') -> None
+     |      Objective:  Missing Configuration
+     |      Parameters:
+     |          warning (str): Warning message
+     |          status  (str): Status message
+     |      Returns:    sys.exit( warning )
+     |  
+     |  set(self, key: str, value: Any) -> None
+     |      Set attribute
+     |  
+     |  set_value(self: Any, obj: list, index: str = None) -> str | None
+     |      Objective:  Set Object Property
+     |      Parameters:
+     |          obj   (object): Any Object
+     |          index    (str): Index
+     |      Returns:    value (str) | None
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from core.classes.core_class.CoreClass:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from core.classes.core_class.CoreClass:
+     |  
+     |  __empty__ = ''
+     |  
+     |  __space__ = ' '
+     |  
+     |  buckets = None
+     |  
+     |  config = None
+     |  
+     |  input = None
+     |  
+     |  json = None
+     |  
+     |  output = None
+
+FILE
+    core/classes/config_class.py
+```
+PyDoc Command [ core_class.py ]:
+python -m pydoc core/classes/core_class.py
+```console
+Help on module core_class:
+
+NAME
+    core_class - Core Module: Classes
+
+CLASSES
+    builtins.object
+        CoreClass
+    
+    class CoreClass(builtins.object)
+     |  CoreClass(json_object: dict = None) -> None
+     |  
+     |  Objective:  Construct Core Class
+     |  Parameters: None
+     |  Returns:    None
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, json_object: dict = None) -> None
+     |      Objective:  Initialize Class variables
+     |      Parameters:
+     |          json_object (dict) -> None
+     |      Returns:    None
+     |  
+     |  add_key_dict(self, key: str, value: Any) -> None
+     |      Add item to dictionary
+     |  
+     |  get(self, key: str) -> Any
+     |      Get attribute
+     |  
+     |  get_all_dict(self) -> dict
+     |      Return dictionary of all attributes
+     |  
+     |  get_key_dict(self, key: str) -> Any
+     |      Get item from dictionary
+     |  
+     |  get_record(self: Any, obj: object = typing.Any, index: str = None, packed: bool = False) -> list | core.classes.json_class.JsonObject
+     |      Objective:  Returns record by key
+     |      Parameters:
+     |          obj    (object): Any Object
+     |          index     (str): Index
+     |          packed   (bool): Return dictionary
+     |      Returns:    record (List or JsonObject)
+     |  
+     |  get_value(self: Any, obj: object = typing.Any, index: str = None) -> str | None
+     |      Objective:  Getting Value by Key
+     |      Parameters:
+     |          obj   (object): Any Object
+     |          index    (str): Index
+     |      Returns:    value (str) | None
+     |  
+     |  has(self, key: str) -> bool
+     |      Check if attribute exists
+     |  
+     |  missing_config(self, warning: str = None, status: str = 'JSON Configuration was not found!') -> None
+     |      Objective:  Missing Configuration
+     |      Parameters:
+     |          warning (str): Warning message
+     |          status  (str): Status message
+     |      Returns:    sys.exit( warning )
+     |  
+     |  set(self, key: str, value: Any) -> None
+     |      Set attribute
+     |  
+     |  set_value(self: Any, obj: list, index: str = None) -> str | None
+     |      Objective:  Set Object Property
+     |      Parameters:
+     |          obj   (object): Any Object
+     |          index    (str): Index
+     |      Returns:    value (str) | None
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  __empty__ = ''
+     |  
+     |  __space__ = ' '
+     |  
+     |  buckets = None
+     |  
+     |  config = None
+     |  
+     |  input = None
+     |  
+     |  json = None
+     |  
+     |  output = None
+
+FILE
+    core/classes/core_class.py
+```
+PyDoc Command [ helper_class.py ]:
+python -m pydoc core/classes/helper_class.py
+```console
+Help on module helper_class:
+
+NAME
+    helper_class - Core Class: Helper Class
+
+CLASSES
+    core.classes.core_class.CoreClass(builtins.object)
+        HelperClass
+    
+    class HelperClass(core.classes.core_class.CoreClass)
+     |  HelperClass(json_object: dict = None) -> None
+     |  
+     |  Objective:  Construct Helper Class
+     |  Parameters:
+     |      CoreClass (object)
+     |  Returns:    None
+     |  
+     |  Method resolution order:
+     |      HelperClass
+     |      core.classes.core_class.CoreClass
+     |      builtins.object
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, json_object: dict = None) -> None
+     |      Objective:  Initialize Script Helper
+     |      Parameters:
+     |          json_object (dict) -> None
+     |      Returns:    None
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from core.classes.core_class.CoreClass:
+     |  
+     |  add_key_dict(self, key: str, value: Any) -> None
+     |      Add item to dictionary
+     |  
+     |  get(self, key: str) -> Any
+     |      Get attribute
+     |  
+     |  get_all_dict(self) -> dict
+     |      Return dictionary of all attributes
+     |  
+     |  get_key_dict(self, key: str) -> Any
+     |      Get item from dictionary
+     |  
+     |  get_record(self: Any, obj: object = typing.Any, index: str = None, packed: bool = False) -> list | core.classes.json_class.JsonObject
+     |      Objective:  Returns record by key
+     |      Parameters:
+     |          obj    (object): Any Object
+     |          index     (str): Index
+     |          packed   (bool): Return dictionary
+     |      Returns:    record (List or JsonObject)
+     |  
+     |  get_value(self: Any, obj: object = typing.Any, index: str = None) -> str | None
+     |      Objective:  Getting Value by Key
+     |      Parameters:
+     |          obj   (object): Any Object
+     |          index    (str): Index
+     |      Returns:    value (str) | None
+     |  
+     |  has(self, key: str) -> bool
+     |      Check if attribute exists
+     |  
+     |  missing_config(self, warning: str = None, status: str = 'JSON Configuration was not found!') -> None
+     |      Objective:  Missing Configuration
+     |      Parameters:
+     |          warning (str): Warning message
+     |          status  (str): Status message
+     |      Returns:    sys.exit( warning )
+     |  
+     |  set(self, key: str, value: Any) -> None
+     |      Set attribute
+     |  
+     |  set_value(self: Any, obj: list, index: str = None) -> str | None
+     |      Objective:  Set Object Property
+     |      Parameters:
+     |          obj   (object): Any Object
+     |          index    (str): Index
+     |      Returns:    value (str) | None
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from core.classes.core_class.CoreClass:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from core.classes.core_class.CoreClass:
+     |  
+     |  __empty__ = ''
+     |  
+     |  __space__ = ' '
+     |  
+     |  buckets = None
+     |  
+     |  config = None
+     |  
+     |  input = None
+     |  
+     |  json = None
+     |  
+     |  output = None
+
+FILE
+    core/classes/helper_class.py
+```
+PyDoc Command [ json_class.py ]:
+python -m pydoc core/classes/json_class.py
+```console
+Help on module json_class:
+
+NAME
+    json_class - Core JsonObject Class
+
+CLASSES
+    builtins.object
+        JsonObject
+    
+    class JsonObject(builtins.object)
+     |  JsonObject(data=None) -> None
+     |  
+     |  Objective: Convert JSON to Object
+     |  Reference: https://stackoverflow.com/a/66054047
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, data=None) -> None
+     |      Objective:  Initialize Object variables
+     |      Parameters:
+     |          data (dict): JSON data
+     |      Returns:    None
+     |  
+     |  delete(self, key: str) -> None
+     |      Delete attribute
+     |  
+     |  items_list(self) -> list
+     |      Return list of items
+     |  
+     |  iter_dict(self) -> <built-in function iter>
+     |      Return iterator
+     |  
+     |  keys_list(self) -> list
+     |      Return list of keys
+     |  
+     |  len_dict(self) -> int
+     |      Return length of dictionary
+     |  
+     |  set_key_dict(self, key: str, value: Any) -> None
+     |      Set item in dictionary
+     |  
+     |  set_value(self, value: Any) -> typing.Any | list | tuple | dict
+     |      Objective:  Configure Attributes
+     |      Parameters:
+     |          value attribute (object)
+     |      Returns:    value attribute (object) | list | tuple | dict
+     |  
+     |  values_list(self) -> list
+     |      Return list of values
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+FILE
+    core/classes/json_class.py
+```
+PyDoc Command [ core_module.py ]:
+python -m pydoc core/core_module.py
+```console
+Help on module core_module:
+
+NAME
+    core_module - Core Module: Objects, Functions
+
+FUNCTIONS
+    configure_features(parser: dict = None) -> dict
+        Objective:  Configure Script Features
+        Parameters:
+            parser (dict): Script Parser
+        Returns:    None
+    
+    configure_gitrepo() -> bool
+        Objective:  Extract Git Repository Configuration
+        Parameters: None
+        Returns:    True (bool)
+    
+    configure_parameter(value: dict = None) -> list
+        Objective:  Configure User-Input Parameter
+        Parameters:
+            value (dict): Parameter value
+        Returns:    True (bool)
+    
+    display_help(argparser: argparse.ArgumentParser = None) -> bool
+        Objective:  Displaying Help
+        Parameters:
+            argparser (argparse.ArgumentParser): Argument Parser
+        Returns:    sys.exit( False )
+    
+    export_config(content: str = None, dataset: object = typing.Any) -> bool
+        Objective:  Export Configuration
+        Parameters:
+            content (str): JSON Configuration
+            dataset   (object): JSON Indent & Filepath
+        Returns:    True (bool)
+    
+    extend_config(project: dict = None) -> bool
+        Objective:  Extending Script Configuration
+        Parameters:
+            project (dict): Project Configuration
+        Returns:    bool (True)
+    
+    get_version(config_file: str = None) -> str
+        Objective:  Get Package Version (.package file)
+        Parameters:
+            configfile (str): Parent directory
+        Returns:    version (str)
+    
+    import_config(srcfile: str = None, spaces: int = 4) -> bool
+        Objective:  Import Configuration
+        Parameters:
+            srcfile (str): JSON Configuration File (resource)
+            spaces (int): JSON Configuration Indentation (default: 4)
+        Returns:    False (bool) | json_config (str)
+    
+    inspect_parameter(index: str = None, target: str = None) -> bool | dict
+        Objective:  Inspect Parameter/Argument Value
+        Parameters:
+            index (str): Parameter/Argument Name
+            content (str): Parameter/Argument Value
+        Returns:    param (dict)
+    
+    list_config(json_config: dict = None) -> bool
+        Objective:  Listing Script Configuration
+        Parameters:
+            json_config (dict): Script Configuration (default: None)
+        Returns:    sys.exit()
+    
+    list_helper() -> bool
+        Objective:  Displaying Custom Help
+        Parameters: None
+        Returns:    bool (True)
+    
+    load_assets(srcfile: str = 'project.json', project: dict = None) -> dict
+        Objective:  Loading Custom Configuration
+        Parameters:
+            srcfile (str): JSON Configuration File (resource)
+            project (dict): Project Configuration
+        Returns:    True (bool)
+    
+    load_buckets() -> dict
+        Objective:  Loading Custom Configuration
+        Parameters: None
+        Returns:    True (bool)
+    
+    load_config(srcdict: dict = None, srcfile: str = None, project: str = None, bucket: str = None) -> dict
+        Objective:  Loading Script Configuration
+        Parameters:
+            srcdict (dict): Source Dictionary (default: None)
+            srcfile (str): JSON Configuration File (resource)
+            project (str): Project Configuration (default: None)
+            bucket (str): Bucket Configuration (default: None)
+        Returns:    srcdict (dict)
+    
+    load_project() -> dict
+        Objective:  Configure Project Paths
+        Parameters: None
+        Returns:    project (dict)
+    
+    load_script(srcfile: str = None, json_config: dict = None) -> list
+        Objective:  Correcting execution context
+        Parameters:
+            srcfile (str): Script Configuration File (resource)
+            json_config (dict): Script Configuration (default: None)
+        Returns:   List [ input_parser, input_args, rouge_args, config ]
+    
+    print_divisor(character='-', length=80) -> str
+        Objective:  Display Section Divisor (character * length)
+        Parameters:
+            character (str): Divisor Character (default: '-')
+            length (int): Divisor Length (default: 80)
+        Returns:    True (bool)
+    
+    read_version(config_file: str = None) -> str
+        Objective:  Read Package Version (.package file)
+        Parameters:
+            configfile (str): Parent directory
+        Returns:    version (str)
+        Reference:  https://packaging.python.org/en/latest/guides/
+                    single-sourcing-package-version/
+    
+    search_config(trgconf: dict = None, target: str = None, pathway: str = None) -> str
+        Objective:  Search Dict-Key Pathway
+        Parameters:
+            trgconf (dict): Target Configuration
+            target (str): Search Content
+            pathway (str): Pathway to target configuration
+        Returns:    content (str)
+    
+    update_config(trgconf: dict = None, target: str = None, replace: str = None)
+        Objective:  Update Configuration (Dict-Key)
+        Parameters:
+            trgconf (dict): Target Configuration
+            target (str): Search Content
+            replace (str): Replace Content
+        Returns:    None
+
+DATA
+    __dot__ = '.'
+    __empty__ = ''
+    __space__ = ' '
+    config = {}
+    repo = <git.repo.base.Repo '.repos/devops/framework/wo...
+    version = {}
+
+FILE
+    core/core_module.py
+```
+PyDoc Command [ core_parser.py ]:
+python -m pydoc core/core_parser.py
+```console
+Help on module core_parser:
+
+NAME
+    core_parser - Core Module: Arguments Parser
+
+FUNCTIONS
+    process_userinput(question: str = None) -> str
+        Objective:  Parsing project parameters (input)
+        Parameters:
+            question (str): Configuration parameters question
+        Returns:    input (str): Parsed user input
+    
+    user_input(get_args: bool = True, input_config: dict = None) -> argparse.ArgumentParser
+        Objective:  Configure User-Input Arguments
+        Parameters:
+            get_args (bool): Get User-Input Arguments (default: True)
+            json_config (dict): User-Input JSON Configuration (default: None)
+        Returns:    List -> [ input_parser, input_args, rouge_args ]
+        Reference:  https://docs.python.org/3/library/argparse.html
+    
+    user_parser(parser: dict = None) -> argparse.ArgumentParser
+        Objective:  Generate argparse.ArgumentParser
+        Parameters:
+            parser (dict): User-Input JSON Configuration (default: None)
+        Returns:    input_parser (argparse.ArgumentParser)
+                    parser (dict)
+                    <class 'argparse.Namespace'>
+
+FILE
+    core/core_parser.py
+```
+PyDoc Command [ core_toolset.py ]:
+python -m pydoc core/core_toolset.py
+```console
+Help on module core_toolset:
+
+NAME
+    core_toolset - Core Module: Custom Toolset
+
+FUNCTIONS
+    activate_project(target_project: str = os.getcwd()) -> str
+        Objective:  Activating Project
+        Parameters:
+            target_project (str): Target Project (default: os.getcwd())
+        Returns:    project (str)
+    
+    bucket_sizetype(bucket: str = None) -> int
+        Objective:  Identify Size-Type
+        Parameters:
+            bucket (str): Bucket Size (bytes)
+        Returns:    int (natural_size)
+        Documentation:
+            Reference:  https://stackoverflow.com/a/15485265
+            Package:    https://pypi.org/project/humanize
+        Requirements:
+            python -m pip install --upgrade humanize
+            import humanize
+    
+    configure_revparse(repo: Any = None, verbose: bool = False) -> dict
+        Objective:  Configure Git Rev-Parse
+        Parameters:
+            repo (Any): Git Repository (default: None)
+            verbose (bool): Display Git Rev-Parse (default: False)
+        Returns:    revparse (dict)
+        Reference:  https://git-scm.com/book/en/v2/
+                    Git-Internals-Environment-Variables
+    
+    display_message(heading: bool = False, message: str = '', newline=True) -> bool
+        Objective:  Display custom (heading: message)
+        Parameters:
+            heading (str): Message heading (default: False)
+            message (str): Message body/content (default: empty string)
+            newline (bool): Newline (default: True)
+        Returns:    True (bool)
+    
+    display_warning(message: str = None) -> bool
+        Objective:  Display warning message
+        Parameters:
+            message (str): Message body/content (default: empty string)
+        Returns:    True (bool)
+    
+    execute_command(command: list = None, message: str = 'Unable to execute shell command!', verbose: bool = False) -> Any
+        Objective:  Execute Shell Command
+        Parameters:
+            command => Shell Command (list)
+            message => Error Message (str)
+            verbose => Display Shell Command (bool)
+        Returns:    output (str)
+    
+    fetch_revparse(command: str = None, verbose: bool = False) -> list | bool
+        Objective:  Executing System Process
+        Parameters:
+            command (str): Git Rev-Parse Command
+            verbose (bool): Display Git Rev-Parse (default: False)
+        Returns:    revparse (list)
+        Reference:  https://git-scm.com/docs/git-rev-parse
+    
+    get_filestat(srcfile: str = None) -> str
+        Objective:  Extracting File Statistics
+        Parameters:
+            srcfile (str): Source File (default: None)
+        Returns:    report (str)
+    
+    logging_content(output: str = None, options: dict = None, verbose: bool = True) -> bool
+        Objective:  Logging Application Content
+        Parameters:
+            output => Output Content (str)
+            options => Logging Options (dict)
+            verbose => Display Output Content (bool)
+        Returns:    None
+    
+    name_iterator(location: str = os.getcwd(), file_name: str = 'file', file_type: str = '', indexing: bool = True) -> str
+        Objective: Ensure unique file naming
+        Parameters:
+            location (str): File location (default: os.getcwd())
+            file_name (str): File name (default: "file")
+            file_type (str): File type (default: '')
+            indexing (bool): Indexing (default: True)
+        Returns: string
+    
+    print_json(content: dict = None) -> bool
+        Objective:  Displaying JSON Content
+        Parameters:
+            content (dict): JSON Content (default: None)
+        Returns:    None
+    
+    script_logging(logs_path: str = os.getcwd(), logs_name: str = 'logs', container: str = '', file_name: str = '', gvar_item: str = '__tracer__') -> bool
+        Objective:  Initialize Script Logging
+        Parameters:
+            logs_path (str): Logs Path (default: os.getcwd())
+            logs_name (str): Logs Name (default: "logs")
+            container (str): Container Name (default: '')
+            file_name (str): File Name (default: '')
+            gvar_item (str): Global Variable (default: '__tracer__')
+        Returns:    True (bool)
+    
+    trace_workflow(frame: inspect.FrameInfo = None) -> bool
+        Objective:  Trace Workflow/Execution
+        Parameters:
+            frame (inspect.FrameInfo): Frame Information (default: None)
+        Returns:    True (bool)
+    
+    unit_test(value: False) -> True
+        Objective:  Unit Testing function
+        Parameters:
+            value (bool): Value (default: False)
+        Returns:    value (bool)
+
+DATA
+    __empty__ = ''
+    __revparse__ = {'absolute_git_dir': '.repos/devops/fra...
+    __space__ = ' '
+    __tracer__ = False
+    datestamp = '231112'
+    datetime_stamp = '231112-165624'
+
+FILE
+    core/core_toolset.py
+```
+PyDoc Command [ sharepoint.py ]:
+python -m pydoc core/modules/storage/sharepoint.py
+```console
+Help on module sharepoint:
+
+NAME
+    sharepoint - Core Class: SharePoint
+
+CLASSES
+    builtins.object
+        SharePoint
+    
+    class SharePoint(builtins.object)
+     |  SharePoint(trg_path: str = os.getcwd(), args: Any = None, storage: dict = None) -> None
+     |  
+     |  Objective:  Construct SharePoint Class
+     |  Parameters: ConfigClass (core.classes.ConfigClass)
+     |  Returns:    None
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, trg_path: str = os.getcwd(), args: Any = None, storage: dict = None) -> None
+     |      Objective:  Initialize Class variables
+     |      Parameters:
+     |          trg_path (str): Target path (default: os.getcwd())
+     |          args (Any): User-Input arguments (default: None)
+     |          storage (dict): User-Input JSON Configuration (default: None)
+     |      Returns:    None
+     |  
+     |  archive_item(self, target_item: dict = None) -> None
+     |      Objective:  Archive item to another location
+     |      Parameters:
+     |          target_item => Target item to archive (dict)
+     |      Returns:    None
+     |  
+     |  configure_environment(self) -> None
+     |      Objective:  Configure Environment
+     |      Parameters: None
+     |      Returns:    None
+     |  
+     |  configure_profile(self) -> bool
+     |      Objective:  Configure SharePoint profile
+     |      Parameters: None
+     |      Returns:    None
+     |  
+     |  copy_item(self, source_item: str = None, target_folder: str = None, target_name: str = None) -> None
+     |      Objective:  Copy item to another location
+     |      Parameters:
+     |          source_item => Source item to copy (str)
+     |          target_folder => Target folder to copy (str)
+     |          target_name => Target name to copy (str)
+     |      Returns:    None
+     |  
+     |  create_folder(self, target_folder: str = None) -> None
+     |      Objective:  Create SharePoint Folder
+     |      Parameters:
+     |          target_folder => Target folder to create (str)
+     |      Returns:    None
+     |  
+     |  credentials_driveid(self) -> Any
+     |      Objective:  Acquire Drive ID for SharePoint
+     |      Parameters: None
+     |      Returns:    None
+     |  
+     |  credentials_siteid(self) -> Any
+     |      Objective:  Acquire Site ID for SharePoint
+     |      Parameters: None
+     |      Returns:    None
+     |  
+     |  credentials_token(self) -> Any
+     |      Objective:  Generate Credentials Token
+     |      Parameters: None
+     |      Returns:    None
+     |  
+     |  delete_item(self, target_item: str = None) -> None
+     |      Objective:  Delete item from SharePoint
+     |      Parameters:
+     |          target_item => Target item to delete (str)
+     |      Returns:    None
+     |  
+     |  download_files(self) -> bool
+     |      Objective:  Download SharePoint Files
+     |      Parameters: None
+     |      Returns:    None
+     |  
+     |  export_profile(self) -> bool
+     |      Objective:  Export SharePoint profile
+     |      Parameters: None
+     |      Returns:    None
+     |  
+     |  fetch_content(self, source_files: dict = None) -> Any
+     |      Objective:  Downloading SharePoint File
+     |      Parameters:
+     |          source_files => Source files to download (dict)
+     |      Returns:    None
+     |  
+     |  inspect_locations(self) -> bool
+     |      Objective:  Inspect SharePoint Remote Locations
+     |      Parameters: None
+     |      Returns:    True (bool)
+     |  
+     |  list_files(self, remote_location: str = None, target_files: list = None) -> list
+     |      Objective:  Listing SharePoint Files (downloads)
+     |      Parameters:
+     |          remote_location => Remote location to list (str)
+     |          target_files => Target files to list (list)
+     |      Returns:    None
+     |  
+     |  locations_token(self) -> float
+     |      Objective:  Provision Token & Generates JSON content
+     |      Parameters: None
+     |      Returns:    None
+     |  
+     |  profile_locations(self) -> bool
+     |      Objective:  Configure SharePoint locations
+     |      Parameters: None
+     |      Returns:    None
+     |  
+     |  profile_secrets(self) -> bool
+     |      Objective:  Configure SharePoint Credentials
+     |      Parameters: None
+     |      Returns:    None
+     |  
+     |  provision_profile(self) -> bool
+     |      Objective:  Provision SharePoint JSON config-file
+     |      Parameters: None
+     |      Returns:    None
+     |  
+     |  publish_content(self, source_file: dict = None) -> Any
+     |      Objective:  Uploading file to SharePoint
+     |      Parameters:
+     |          source_file => Source file to upload (dict)
+     |      Returns:    None
+     |  
+     |  request_passphrase(self) -> bool
+     |      Objective:  Encryption Passphrase
+     |      Parameters: None
+     |      Returns:    None
+     |  
+     |  select_files(self) -> list
+     |      Objective:  Return most recent file
+     |      Parameters: None
+     |      Returns:    None
+     |  
+     |  upload_files(self) -> bool
+     |      Objective:  Uploading Local Files
+     |      Parameters: None
+     |      Returns:    None
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  __empty__ = ''
+     |  
+     |  __space__ = ' '
+     |  
+     |  __tab__ = '\t'
+     |  
+     |  access = {'fernet': None, 'hash': None, 'keyset': None, 'phrase': None...
+     |  
+     |  already = {'archived': [], 'exported': []}
+     |  
+     |  archive_folder = {}
+     |  
+     |  args = None
+     |  
+     |  credentials = None
+     |  
+     |  exporting = {'action': None, 'archive': None, 'local': None, 'remote':...
+     |  
+     |  graph = {'domain': None, 'sites': None, 'version': None}
+     |  
+     |  import_everything = 'all'
+     |  
+     |  import_latest = 'latest'
+     |  
+     |  importing = {'action': None, 'local': None, 'remote': None}
+     |  
+     |  locations = None
+     |  
+     |  login = None
+     |  
+     |  profile = {'credentials': {'client_id': '', 'drive_id': '', 'secret': ...
+     |  
+     |  sharepoint = {'config': None, 'filepath': None}
+     |  
+     |  status_code = {'200': 'Indicates that the request has succeeded.', '20...
+     |  
+     |  storage = None
+     |  
+     |  trg_path = None
+
+FILE
+    core/modules/storage/sharepoint.py
+```
+Coverage PyDoc Path: docs/pydoc/app
+PyDoc Command [ mod_classes.py ]:
+python -m pydoc app/mod_classes.py
+```console
+Help on module mod_classes:
+
+NAME
+    mod_classes - Application Module: Worktree Classes
+
+CLASSES
+    core.classes.app_class.AppConfig(core.classes.config_class.ConfigClass)
+        Worktree
+    
+    class Worktree(core.classes.app_class.AppConfig)
+     |  Worktree(json_object: dict = None, trg_path: str = os.getcwd()) -> None
+     |  
+     |  Objective:  Construct Worktree Class
+     |  Parameters:
+     |      AppConfig (core.classes.AppConfig) -> None
+     |  Returns:    None
+     |  
+     |  Method resolution order:
+     |      Worktree
+     |      core.classes.app_class.AppConfig
+     |      core.classes.config_class.ConfigClass
+     |      core.classes.helper_class.HelperClass
+     |      core.classes.bucket_class.BucketsClass
+     |      core.classes.core_class.CoreClass
+     |      builtins.object
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, json_object: dict = None, trg_path: str = os.getcwd()) -> None
+     |      Objective:  Initialize Class variables
+     |      Parameters:
+     |          json_object => JSON Object (dict)
+     |      Returns:    None
+     |  
+     |  configure_environment(self) -> None
+     |      Objective:  Configure Environment
+     |      Parameters: None
+     |      Returns:    None
+     |  
+     |  disable_branch(self, branch) -> bool
+     |      Objective:  Disable (remove) Git Worktree Branch
+     |      Parameters:
+     |          branch (str): Git Branch
+     |      Returns:    True/False (bool)
+     |  
+     |  display_worktree(self, abort=False, path=os.getcwd()) -> bool
+     |      Objective:  Displaying Git Worktree
+     |      Parameters:
+     |          abort (bool): Abort execution
+     |          path (str): Path to Git Repository
+     |      Returns:    True/False (bool)
+     |  
+     |  enable_branch(self, target_branch, message, path=os.getcwd()) -> bool
+     |      Objective:  Enable (add) Git Worktree Branch
+     |      Parameters:
+     |          target_branch (str): Git Branch
+     |          message (str): Commit Message
+     |          path (str): Path to Git Repository
+     |      Returns:    True/False (bool)
+     |  
+     |  filter_branch(self, text, listing, pattern='/') -> str
+     |      Objective:  Splits key/pair set and return its value
+     |      Parameters:
+     |          text (str): Text to be filtered (key/pair set)
+     |          listing (list): List of patterns to be filtered/discarded
+     |          pattern (str): Pattern to be used as split key/pair set
+     |      Returns:    value (str): Extracted value or False
+     |  
+     |  import_branches(self) -> bool
+     |      Objective:  Include All Branches into Git Worktree
+     |      Parameters: None
+     |      Returns:    True/False (bool)
+     |  
+     |  include_branch(self, branch: str = None) -> bool
+     |      Objective:  Include Branch into Git Worktree
+     |      Parameters:
+     |          branch (str): Git Branch
+     |      Returns:    True/False (bool)
+     |  
+     |  inspect_worktree(self, path) -> bool
+     |      Objective:  Inspecting Git Worktree
+     |      Parameters:
+     |          path (str): Path to Git Repository
+     |      Returns:    True/False (bool)
+     |  
+     |  manage_branches(self) -> bool
+     |      Objective:  Managing Git Worktree branches
+     |      Parameters: None
+     |      Returns:    True/False (bool)
+     |  
+     |  prune_worktrees(self) -> bool
+     |      Objective:  Pruning Git Worktree
+     |      Parameters: None
+     |      Returns:    True/False (bool)
+     |      Warning:    Private method invoked by remove_worktrees()
+     |  
+     |  pull_branches(self) -> bool
+     |      Objective:  Updating Git Repository branches
+     |      Parameters: None
+     |      Returns:    True/False (bool)
+     |  
+     |  remove_branch(self, target_branch: str = None) -> bool
+     |      Objective:  Removing Git Worktree directory (branch)
+     |      Parameters: worktrees (str): Path to Git Worktrees
+     |      Returns:    True/False (bool)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  args = None
+     |  
+     |  discard = None
+     |  
+     |  ignore = None
+     |  
+     |  json_config = None
+     |  
+     |  repo = None
+     |  
+     |  revparse = {}
+     |  
+     |  worktrees = None
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from core.classes.app_class.AppConfig:
+     |  
+     |  export_project(self) -> bool
+     |      Objective:  Export Project Configurations
+     |      Parameters: None
+     |      Returns:    bool (True)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from core.classes.app_class.AppConfig:
+     |  
+     |  storage = None
+     |  
+     |  trg_path = None
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from core.classes.bucket_class.BucketsClass:
+     |  
+     |  create_buckets(self, bucket_path: str = None, bucket_type: str = None, verbose: bool = False) -> bool | int
+     |      Objective:  Create/Initialize (dirs, files, docs)
+     |      Parameters:
+     |          bucket_path  (str): Bucket path
+     |          bucket_type  (str): Bucket type (dirs, files, docs)
+     |          verbose     (bool): Verbose output
+     |      Returns:    True (bool) | bucket_size (int)
+     |  
+     |  load_buckets(self, bucket_type: str = None, bucket_conf: dict = None, bucket_path: str = None, create: bool = False) -> bool
+     |      Objective:  Construct Bucket (dirs, files, docs)
+     |      Parameters:
+     |          bucket_type  (str): Bucket type (dirs, files, docs)
+     |          bucket_conf (dict): Bucket configuration
+     |          bucket_path  (str): Bucket path
+     |          create      (bool): Create bucket
+     |      Returns:    True (bool)
+     |  
+     |  setup_buckets(self) -> bool
+     |      Objective:  Setup Buckets (dirs, files, docs)
+     |      Parameters: None
+     |      Returns:    True (bool)
+     |  
+     |  update_buckets(self, dictobj: dict = None, tracker: str = None, abspath: str = None) -> bool
+     |      Objective:  Update Buckets (dirs, files, docs)
+     |      Parameters:
+     |          dictobj (dict): Dictionary object
+     |          tracker  (str): Tracking path
+     |          abspath  (str): Absolute path
+     |      Returns:    True (bool)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from core.classes.core_class.CoreClass:
+     |  
+     |  add_key_dict(self, key: str, value: Any) -> None
+     |      Add item to dictionary
+     |  
+     |  get(self, key: str) -> Any
+     |      Get attribute
+     |  
+     |  get_all_dict(self) -> dict
+     |      Return dictionary of all attributes
+     |  
+     |  get_key_dict(self, key: str) -> Any
+     |      Get item from dictionary
+     |  
+     |  get_record(self: Any, obj: object = typing.Any, index: str = None, packed: bool = False) -> list | core.classes.json_class.JsonObject
+     |      Objective:  Returns record by key
+     |      Parameters:
+     |          obj    (object): Any Object
+     |          index     (str): Index
+     |          packed   (bool): Return dictionary
+     |      Returns:    record (List or JsonObject)
+     |  
+     |  get_value(self: Any, obj: object = typing.Any, index: str = None) -> str | None
+     |      Objective:  Getting Value by Key
+     |      Parameters:
+     |          obj   (object): Any Object
+     |          index    (str): Index
+     |      Returns:    value (str) | None
+     |  
+     |  has(self, key: str) -> bool
+     |      Check if attribute exists
+     |  
+     |  missing_config(self, warning: str = None, status: str = 'JSON Configuration was not found!') -> None
+     |      Objective:  Missing Configuration
+     |      Parameters:
+     |          warning (str): Warning message
+     |          status  (str): Status message
+     |      Returns:    sys.exit( warning )
+     |  
+     |  set(self, key: str, value: Any) -> None
+     |      Set attribute
+     |  
+     |  set_value(self: Any, obj: list, index: str = None) -> str | None
+     |      Objective:  Set Object Property
+     |      Parameters:
+     |          obj   (object): Any Object
+     |          index    (str): Index
+     |      Returns:    value (str) | None
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from core.classes.core_class.CoreClass:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from core.classes.core_class.CoreClass:
+     |  
+     |  __empty__ = ''
+     |  
+     |  __space__ = ' '
+     |  
+     |  buckets = None
+     |  
+     |  config = None
+     |  
+     |  input = None
+     |  
+     |  json = None
+     |  
+     |  output = None
+
+FILE
+    app/mod_classes.py
+```
+PyDoc Command [ mod_project.py ]:
+python -m pydoc app/mod_project.py
+```console
+Help on module mod_project:
+
+NAME
+    mod_project - App Module: Project Workflow
+
+FUNCTIONS
+    main(env_config: dict = None, trg_path: str = None, app_logging: str = None) -> bool
+        Objective:  Managing Git Worktree workflow
+        Parameters:
+            env_config  => Environment Configuration (dict)
+            trg_path    => Target Path (str)
+            app_logging => Application Logging (str)
+        Returns:    True (bool)
+
+FILE
+    app/mod_project.py
+```
+Coverage PyDoc Path: docs/pydoc/tests
+PyDoc Command [ conftest.py ]:
+python -m pydoc tests/conftest.py
+```console
+Help on module conftest:
+
+NAME
+    conftest - Unit Testing Configuration File
+
+FUNCTIONS
+    fixture__application() -> str
+        Objective:  Testing unit_test function
+        Parameters:
+            application (str)
+        Returns:    current working directory (str)
+    
+    fixture__args_parser() -> argparse.ArgumentParser
+        Objective:  Provide an ArgumentParser object
+        Parameters:
+            args_parser (argparse.ArgumentParser)
+        Returns:    ArgumentParser object (argparse.ArgumentParser)
+    
+    fixture__current_directory() -> str
+        Objective:  Obtain current working directory
+        Parameters:
+            current_directory (str)
+        Returns:    current working directory (str)
+    
+    fixture__custom_message() -> str
+        Objective:  Generating a custom random message
+        Parameters:
+            custom_message (str)
+        Returns:    custom random message (str)
+    
+    fixture__json_config() -> dict
+        Objective:  Testing unit_test function
+        Parameters:
+            json_config (dict)
+        Returns:    current working directory (str)
+    
+    fixture__test_module() -> bool
+        Objective:  Testing unit_test function
+        Parameters:
+            test_module (bool)
+        Returns:    current working directory (str)
+
+FILE
+    tests/conftest.py
+```
+PyDoc Command [ test__core_module.py ]:
+python -m pydoc tests/test__core_module.py
+```console
+Help on module test__core_module:
+
+NAME
+    test__core_module - Testing: Core Module
+
+FUNCTIONS
+    test__display_help(args_parser) -> bool
+        Objective:  Testing display_help function
+        Parameters:
+            args_parser (argparse.ArgumentParser)
+        Returns:    True/False (bool)
+    
+    test__load_script(application: str = 'project.py', json_config: dict = None) -> bool
+        Objective:  Testing load_script function
+        Parameters:
+            application (str)
+            json_config (dict)
+        Returns:    True/False (bool)
+    
+    test__module(test_module: bool = True) -> bool
+        Objective:  Testing unit_test function
+        Parameters:
+            test_module (bool)
+        Returns:    True/False (bool)
+    
+    test__user_input(json_config) -> bool
+        Objective:  Testing user_input function
+        Parameters:
+            json_config (dict)
+        Returns:    True/False (bool)
+
+FILE
+    tests/test__core_module.py
+```
+PyDoc Command [ test__mod_project.py ]:
+python -m pydoc tests/test__mod_project.py
+```console
+Help on module test__mod_project:
+
+NAME
+    test__mod_project - Testing: Application Module
+
+FILE
+    tests/test__mod_project.py
+```

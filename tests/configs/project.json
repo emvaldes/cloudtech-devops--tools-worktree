@@ -1,0 +1,845 @@
+{
+    "script": {
+        "info": {
+            "id": "worktree-workflows",
+            "name": "Git Worktree Workflows",
+            "description": "Git Worktree Workflows",
+            "status": "completed",
+            "client": {
+                "id": "netsrv-devops",
+                "name": "Global Network Platforms",
+                "tasks": [
+                    {
+                        "id": "requirements",
+                        "description": "Identify Product Requirements",
+                        "status": "completed"
+                    },
+                    {
+                        "id": "evaluation",
+                        "description": "Product Evaluation and Testing",
+                        "status": "completed"
+                    },
+                    {
+                        "id": "acceptance",
+                        "description": "Product Acceptance and Approval",
+                        "status": "completed"
+                    }
+                ]
+            },
+            "team": {
+                "lead": {
+                    "id": "eduardo.valdes",
+                    "name": "Eduardo Valdes",
+                    "email": "eduardo.valdes@takeda.com",
+                    "tasks": [
+                        {
+                            "id": "worktree",
+                            "description": "Git Worktree Workflows",
+                            "status": "completed"
+                        }
+                    ]
+                },
+                "devops": []
+            },
+            "readme": "README.md",
+            "repo": {
+                "url": "https://github.com/oneTakeda/netsrv-devops--tools-worktree.git",
+                "domain": "github.com",
+                "account": "oneTakeda",
+                "repo": "netsrv-devops--tools-worktree"
+            }
+        },
+        "package": {
+            "name": "worktree",
+            "description": "Git Worktree Workflows",
+            "version": {
+                "major": 0,
+                "minor": 1,
+                "patch": 0
+            },
+            "path": "",
+            "script": "project.py",
+            "configs": "conf"
+        },
+        "buckets": {
+            "id": "buckets",
+            "dirs": [
+                {
+                    "id": "vscode",
+                    "name": ".vscode",
+                    "size": "0 bytes",
+                    "dirs": [],
+                    "files": [
+                        {
+                            "id": "launch",
+                            "name": "launch",
+                            "type": "json",
+                            "size": "1.8 kB",
+                            "hash": "231dd63c65c0a7969cd33a9b645621cc",
+                            "date": "2023-11-03 11:18:42.956932"
+                        },
+                        {
+                            "id": "settings",
+                            "name": "settings",
+                            "type": "json",
+                            "size": "223 Bytes",
+                            "hash": "4460c0f8a3fa0ed376f2856f4d698c6b",
+                            "date": "2023-11-03 10:04:05.741482"
+                        }
+                    ]
+                },
+                {
+                    "id": "app",
+                    "name": "app",
+                    "size": "0 bytes",
+                    "dirs": [],
+                    "files": [
+                        {
+                            "id": "init",
+                            "name": "__init__",
+                            "type": "py",
+                            "size": "0 Bytes",
+                            "hash": "d41d8cd98f00b204e9800998ecf8427e",
+                            "date": "2023-11-03 10:04:05.742159"
+                        },
+                        {
+                            "id": "classes",
+                            "name": "mod_classes",
+                            "type": "py",
+                            "size": "23.7 kB",
+                            "hash": "90342699e00710bc7a3b37039e623c2e",
+                            "date": "2023-11-07 04:27:55.617546"
+                        },
+                        {
+                            "id": "project",
+                            "name": "mod_project",
+                            "type": "py",
+                            "size": "4.1 kB",
+                            "hash": "321d539f0e2de5399311888328567ce7",
+                            "date": "2023-11-12 15:16:10.430588"
+                        }
+                    ]
+                },
+                {
+                    "id": "conf",
+                    "name": "conf",
+                    "size": "0 bytes",
+                    "dirs": [],
+                    "files": [
+                        {
+                            "id": "buckets",
+                            "name": "app_buckets",
+                            "type": "json",
+                            "size": "1.5 kB",
+                            "hash": "68d4547fb92a2df5020776e007e3378e",
+                            "date": "2023-11-05 04:44:20.407606"
+                        },
+                        {
+                            "id": "datasets",
+                            "name": "app_datasets",
+                            "type": "json",
+                            "size": "284 Bytes",
+                            "hash": "bcb1dcf1859c35a3a3366109a1dbe00f",
+                            "date": "2023-11-03 10:04:05.742749"
+                        },
+                        {
+                            "id": "options",
+                            "name": "app_options",
+                            "type": "json",
+                            "size": "5.2 kB",
+                            "hash": "fd2a0914de2bc995822046c88d00da7a",
+                            "date": "2023-11-07 04:40:11.436595"
+                        }
+                    ]
+                },
+                {
+                    "id": "logs",
+                    "name": "logs",
+                    "size": "0 bytes",
+                    "dirs": [
+                        {
+                            "id": "tracer",
+                            "name": "tracer",
+                            "size": "0 bytes",
+                            "dirs": [],
+                            "files": []
+                        },
+                        {
+                            "id": "evaluate",
+                            "name": "evaluate",
+                            "size": "0 bytes",
+                            "dirs": [],
+                            "files": []
+                        }
+                    ],
+                    "files": []
+                },
+                {
+                    "id": "tests",
+                    "name": "tests",
+                    "size": "0 bytes",
+                    "dirs": [
+                        {
+                            "id": "configs",
+                            "name": "configs",
+                            "size": "0 bytes",
+                            "dirs": [],
+                            "files": [
+                                {
+                                    "id": "buckets",
+                                    "name": "buckets",
+                                    "type": "json",
+                                    "size": "4.8 kB",
+                                    "hash": "6e61b3bf7d4a9cd5d9116e90d18c2bf6",
+                                    "date": "2023-11-12 17:33:56.418799"
+                                },
+                                {
+                                    "id": "project",
+                                    "name": "project",
+                                    "type": "json",
+                                    "size": "28.7 kB",
+                                    "hash": "93fca8f9c93a9fe06b906774cb4bd62e",
+                                    "date": "2023-11-12 17:33:56.419989"
+                                }
+                            ]
+                        }
+                    ],
+                    "files": [
+                        {
+                            "id": "init",
+                            "name": "__init__",
+                            "type": "py",
+                            "size": "0 Bytes",
+                            "hash": "d41d8cd98f00b204e9800998ecf8427e",
+                            "date": "2023-11-03 10:04:05.763507"
+                        }
+                    ]
+                }
+            ],
+            "files": [
+                {
+                    "id": "readme",
+                    "name": "README",
+                    "type": "md",
+                    "size": "15.8 kB",
+                    "hash": "aa2eede7fd98e56a5ef24f96b8f3f8f0",
+                    "date": "2023-11-12 15:03:24.428413"
+                },
+                {
+                    "id": "pylint",
+                    "name": ".pylint",
+                    "type": "rc",
+                    "size": "21.3 kB",
+                    "hash": "bf93a09b158e1d18c2362685eff44c99",
+                    "date": "2023-11-12 15:04:49.406469"
+                },
+                {
+                    "id": "action",
+                    "name": "action",
+                    "type": "yaml",
+                    "size": "16.6 kB",
+                    "hash": "db3dbd99664f48676ebafcfc38169a45",
+                    "date": "2023-11-12 15:04:34.692733"
+                },
+                {
+                    "id": "project",
+                    "name": "project",
+                    "type": "json",
+                    "size": "3.3 kB",
+                    "hash": "aa19b028a3167bfbf00de4a9f5457933",
+                    "date": "2023-11-07 22:10:20.293480"
+                },
+                {
+                    "id": "project",
+                    "name": "project",
+                    "type": "py",
+                    "size": "1.9 kB",
+                    "hash": "bb97d0f13d3e0591b4dd3c80bed634cb",
+                    "date": "2023-11-03 11:18:42.984881"
+                },
+                {
+                    "id": "requirements",
+                    "name": "requirements",
+                    "type": "txt",
+                    "size": "254 Bytes",
+                    "hash": "546dd710c60630092953a12b85f63818",
+                    "date": "2023-11-03 11:18:42.985329"
+                }
+            ]
+        },
+        "exports": {
+            "config": {
+                "path": "tests/configs",
+                "name": "project",
+                "type": "json",
+                "indent": 4
+            },
+            "docs": {
+                "path": "tests/configs",
+                "name": "buckets",
+                "type": "json",
+                "indent": 4
+            }
+        },
+        "options": {
+            "params": {
+                "create": {
+                    "name": [
+                        "--create",
+                        "--init"
+                    ],
+                    "action": "store_true",
+                    "default": false,
+                    "dest": "create",
+                    "help": "Create Git Worktree",
+                    "required": false
+                },
+                "destroy": {
+                    "name": [
+                        "--destroy"
+                    ],
+                    "action": "store_true",
+                    "default": false,
+                    "dest": "destroy",
+                    "help": "Destroy Git Worktree",
+                    "required": false
+                },
+                "display": {
+                    "name": [
+                        "--display"
+                    ],
+                    "action": "extend",
+                    "dest": "display",
+                    "help": "Display Application Assets",
+                    "metavar": "display",
+                    "nargs": "*",
+                    "required": false
+                },
+                "download": {
+                    "name": [
+                        "--download"
+                    ],
+                    "action": "extend",
+                    "dest": "download",
+                    "help": "Download Application Assets",
+                    "metavar": "download",
+                    "nargs": "*",
+                    "required": false
+                },
+                "enable": {
+                    "name": [
+                        "--enable"
+                    ],
+                    "action": "extend",
+                    "dest": "enable",
+                    "help": "Enable Application Features",
+                    "metavar": "enable",
+                    "nargs": "*",
+                    "required": false
+                },
+                "export": {
+                    "name": [
+                        "--export"
+                    ],
+                    "action": "extend",
+                    "dest": "export",
+                    "help": "Export Application Assets",
+                    "metavar": "export",
+                    "nargs": "*",
+                    "required": false
+                },
+                "format": {
+                    "name": [
+                        "--format"
+                    ],
+                    "action": "store",
+                    "const": false,
+                    "default": false,
+                    "dest": "format",
+                    "help": "Import/Export Data Format",
+                    "metavar": "format",
+                    "nargs": "?",
+                    "required": false,
+                    "type": "str"
+                },
+                "git-repo": {
+                    "name": [
+                        "--git-repo"
+                    ],
+                    "action": "store",
+                    "const": false,
+                    "default": false,
+                    "dest": "git_repo",
+                    "help": "Path to Git Repository",
+                    "metavar": "git_repo",
+                    "nargs": "?",
+                    "required": false,
+                    "type": "str"
+                },
+                "include": {
+                    "name": [
+                        "--add",
+                        "--include"
+                    ],
+                    "action": "store",
+                    "const": false,
+                    "default": false,
+                    "dest": "include",
+                    "help": "Add Branch into Git Worktree",
+                    "metavar": "include",
+                    "nargs": "?",
+                    "required": false,
+                    "type": "str"
+                },
+                "local": {
+                    "name": [
+                        "--local"
+                    ],
+                    "action": "store_true",
+                    "default": false,
+                    "dest": "local",
+                    "help": "All Branches into Git Worktree",
+                    "required": false
+                },
+                "pass": {
+                    "name": [
+                        "--pass"
+                    ],
+                    "action": "store",
+                    "const": false,
+                    "default": false,
+                    "dest": "password",
+                    "help": "Encrypt/Decrypt Access Passphrase",
+                    "metavar": "password",
+                    "nargs": "1",
+                    "required": false,
+                    "type": "str"
+                },
+                "offline": {
+                    "name": [
+                        "--offline"
+                    ],
+                    "action": "store_true",
+                    "default": false,
+                    "dest": "local",
+                    "help": "Disable Pull/Fetch Remote",
+                    "required": false
+                },
+                "reload": {
+                    "name": [
+                        "--reload"
+                    ],
+                    "action": "store_true",
+                    "default": false,
+                    "dest": "reload",
+                    "help": "Prune & Reload Git Branches",
+                    "required": false
+                },
+                "remove": {
+                    "name": [
+                        "--remove"
+                    ],
+                    "action": "store",
+                    "const": false,
+                    "default": false,
+                    "dest": "remove",
+                    "help": "Remove branch from Git Repository",
+                    "metavar": "remove",
+                    "nargs": "?",
+                    "required": false,
+                    "type": "str"
+                },
+                "upload": {
+                    "name": [
+                        "--upload"
+                    ],
+                    "action": "extend",
+                    "dest": "upload",
+                    "help": "Upload Application Assets",
+                    "metavar": "upload",
+                    "nargs": "*",
+                    "required": false
+                },
+                "worktree": {
+                    "name": [
+                        "--worktree"
+                    ],
+                    "action": "store",
+                    "const": false,
+                    "default": ".worktrees",
+                    "dest": "worktree",
+                    "help": "Default Git Worktree",
+                    "metavar": "worktree",
+                    "nargs": "?",
+                    "required": false,
+                    "type": "str"
+                }
+            },
+            "defaults": {
+                "json": {
+                    "name": [
+                        "--json"
+                    ],
+                    "action": "store_true",
+                    "default": false,
+                    "dest": "json",
+                    "help": "Display Script Configuration",
+                    "required": false,
+                    "question": false,
+                    "example": false
+                },
+                "params": {
+                    "name": [
+                        "--params"
+                    ],
+                    "action": "store_true",
+                    "default": false,
+                    "dest": "params",
+                    "help": "Display Input Parameters",
+                    "required": false,
+                    "question": false,
+                    "example": false
+                },
+                "version": {
+                    "name": [
+                        "--version"
+                    ],
+                    "action": "store_true",
+                    "default": false,
+                    "dest": "version",
+                    "help": "Display Version: %(prog)s 1.0",
+                    "required": false,
+                    "question": "Display Package version",
+                    "example": false
+                },
+                "verbose": {
+                    "name": [
+                        "--verbose"
+                    ],
+                    "action": "store_true",
+                    "default": false,
+                    "dest": "verbose",
+                    "help": "Enable|Disable verbosity",
+                    "required": false,
+                    "question": false,
+                    "example": false
+                },
+                "debug": {
+                    "name": [
+                        "--debug"
+                    ],
+                    "action": "store_true",
+                    "default": false,
+                    "dest": "debug",
+                    "help": "Debugging Code Execution",
+                    "required": false,
+                    "question": false,
+                    "example": false
+                },
+                "help": {
+                    "name": [
+                        "--helper"
+                    ],
+                    "action": "store_true",
+                    "default": false,
+                    "dest": "help",
+                    "help": "Show this help message and exits",
+                    "required": false,
+                    "question": "Display Program's Help",
+                    "example": false
+                },
+                "info": {
+                    "name": [
+                        "--info"
+                    ],
+                    "action": "store_true",
+                    "default": false,
+                    "dest": "info",
+                    "help": "Project Information and online references",
+                    "required": false,
+                    "question": "Display Project Information",
+                    "example": false
+                },
+                "examples": {
+                    "name": [
+                        "--examples"
+                    ],
+                    "action": "store_true",
+                    "default": false,
+                    "dest": "examples",
+                    "help": "Display script execution options",
+                    "required": false,
+                    "question": false,
+                    "example": false
+                },
+                "wizard": {
+                    "name": [
+                        "--wizard"
+                    ],
+                    "action": "store_true",
+                    "default": false,
+                    "dest": "wizard",
+                    "help": "Identify requests to be executed",
+                    "required": false,
+                    "question": "EnableInteractive User Interface",
+                    "example": false
+                }
+            }
+        },
+        "features": {
+            "required": [],
+            "optional": [
+                [
+                    "--json"
+                ],
+                [
+                    "--params"
+                ],
+                [
+                    "--version"
+                ],
+                [
+                    "--verbose"
+                ],
+                [
+                    "--debug"
+                ],
+                [
+                    "--helper"
+                ],
+                [
+                    "--info"
+                ],
+                [
+                    "--examples"
+                ],
+                [
+                    "--wizard"
+                ]
+            ],
+            "examples": [
+                [
+                    "--create",
+                    "--init"
+                ],
+                [
+                    "--destroy"
+                ],
+                [
+                    "--display"
+                ],
+                [
+                    "--download"
+                ],
+                [
+                    "--enable"
+                ],
+                [
+                    "--export"
+                ],
+                [
+                    "--format"
+                ],
+                [
+                    "--git-repo"
+                ],
+                [
+                    "--add",
+                    "--include"
+                ],
+                [
+                    "--local"
+                ],
+                [
+                    "--pass"
+                ],
+                [
+                    "--offline"
+                ],
+                [
+                    "--reload"
+                ],
+                [
+                    "--remove"
+                ],
+                [
+                    "--upload"
+                ],
+                [
+                    "--worktree"
+                ]
+            ]
+        },
+        "input": {
+            "args": {
+                "create": false,
+                "destroy": false,
+                "display": [
+                    "config"
+                ],
+                "download": [],
+                "enable": [
+                    "sharepoint"
+                ],
+                "export": null,
+                "format": false,
+                "git_repo": false,
+                "include": false,
+                "local": false,
+                "password": false,
+                "reload": false,
+                "remove": false,
+                "upload": [],
+                "worktree": ".worktrees",
+                "json": false,
+                "params": false,
+                "version": false,
+                "verbose": true,
+                "debug": false,
+                "help": false,
+                "info": false,
+                "examples": false,
+                "wizard": false
+            }
+        },
+        "helper": {
+            "formatter": "default",
+            "headers": {
+                "interview": "Please, answer the following questions"
+            }
+        }
+    },
+    "storage": {
+        "sharepoint": {
+            "console": "",
+            "site_name": "DevNetOpsEngineers",
+            "library": "Documents",
+            "project": "Projects/NetSrv-DevOps/Worktree",
+            "import": {
+                "local": "data:imports",
+                "remote": "Downloads",
+                "files": [
+                    {
+                        "name": "template-downloads.json",
+                        "target": "template.json"
+                    }
+                ],
+                "action": "latest"
+            },
+            "export": {
+                "local": "tests:configs",
+                "remote": "Uploads",
+                "archive": "Archives",
+                "files": [
+                    {
+                        "name": "buckets.json",
+                        "target": "buckets-uploads.json"
+                    },
+                    {
+                        "name": "project.json",
+                        "target": "project-uploads.json"
+                    }
+                ],
+                "action": "archive"
+            },
+            "update": true
+        }
+    },
+    "source": {
+        "file": {
+            "path": "",
+            "name": "project",
+            "type": "json",
+            "size": "3.3 kB",
+            "hash": "aa19b028a3167bfbf00de4a9f5457933",
+            "date": "2023-11-07 22:10:20.293480"
+        }
+    },
+    "project": {
+        "buckets": {
+            "id": "buckets",
+            "dirs": [
+                {
+                    "id": "data",
+                    "name": "data",
+                    "size": "0 bytes",
+                    "dirs": [
+                        {
+                            "id": "exports",
+                            "name": "exports",
+                            "size": "0 bytes",
+                            "dirs": [],
+                            "files": []
+                        },
+                        {
+                            "id": "imports",
+                            "name": "imports",
+                            "size": "0 bytes",
+                            "dirs": [],
+                            "files": []
+                        },
+                        {
+                            "id": "reports",
+                            "name": "reports",
+                            "size": "0 bytes",
+                            "dirs": [],
+                            "files": []
+                        }
+                    ],
+                    "files": []
+                },
+                {
+                    "id": "tests",
+                    "name": "tests",
+                    "size": "0 bytes",
+                    "dirs": [
+                        {
+                            "id": "configs",
+                            "name": "configs",
+                            "size": "0 bytes",
+                            "dirs": [],
+                            "files": []
+                        }
+                    ],
+                    "files": []
+                }
+            ],
+            "files": []
+        },
+        "source": {
+            "file": {
+                "path": "conf",
+                "name": "app_buckets",
+                "type": "json",
+                "size": "1.5 kB",
+                "hash": "68d4547fb92a2df5020776e007e3378e",
+                "date": "2023-11-05 04:44:20.407606"
+            }
+        }
+    },
+    "dataset": {
+        "domain": "takeda.com",
+        "users": [
+            {
+                "id": "john.doe",
+                "first_name": "John",
+                "last_name": "Doe"
+            },
+            {
+                "id": "joan.doe",
+                "first_name": "Joan",
+                "last_name": "Doe"
+            }
+        ],
+        "source": {
+            "file": {
+                "path": "conf",
+                "name": "app_datasets",
+                "type": "json",
+                "size": "284 Bytes",
+                "hash": "bcb1dcf1859c35a3a3366109a1dbe00f",
+                "date": "2023-11-03 10:04:05.742749"
+            }
+        }
+    }
+}

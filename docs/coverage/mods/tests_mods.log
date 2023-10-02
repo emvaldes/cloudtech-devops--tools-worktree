@@ -1,0 +1,8 @@
+Name                         Stmts   Miss  Cover   Missing
+----------------------------------------------------------
+tests/__init__.py                0      0   100%
+tests/conftest.py               36      6    83%   26, 47-48, 74, 85, 96
+tests/test__core_module.py      28      0   100%
+tests/test__mod_project.py       0      0   100%
+----------------------------------------------------------
+TOTAL                           64      6    91%

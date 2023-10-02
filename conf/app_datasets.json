@@ -1,0 +1,15 @@
+{
+    "domain": "takeda.com",
+    "users": [
+        {
+            "id": "john.doe",
+            "first_name": "John",
+            "last_name": "Doe"
+        },
+        {
+            "id": "joan.doe",
+            "first_name": "Joan",
+            "last_name": "Doe"
+        }
+    ]
+}

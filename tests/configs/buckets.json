@@ -1,0 +1,154 @@
+{
+    "id": "docs",
+    "name": "docs",
+    "size": "0 bytes",
+    "dirs": [
+        {
+            "id": "coverage",
+            "name": "coverage",
+            "size": "0 bytes",
+            "dirs": [
+                {
+                    "id": "html",
+                    "name": "html",
+                    "size": "0 bytes",
+                    "dirs": [],
+                    "files": []
+                },
+                {
+                    "id": "mods",
+                    "name": "mods",
+                    "size": "0 bytes",
+                    "dirs": [],
+                    "files": [
+                        {
+                            "id": "core_mods",
+                            "name": "core_mods",
+                            "type": "log",
+                            "size": "1.2 kB",
+                            "hash": "242bfc980e9478c2f1b928bb78f62622",
+                            "date": "2023-11-12 16:56:22.130158"
+                        },
+                        {
+                            "id": "app_mods",
+                            "name": "app_mods",
+                            "type": "log",
+                            "size": "332 Bytes",
+                            "hash": "cc4f46ad679ff83eb06cdae732de242e",
+                            "date": "2023-11-12 16:56:22.706360"
+                        },
+                        {
+                            "id": "tests_mods",
+                            "name": "tests_mods",
+                            "type": "log",
+                            "size": "445 Bytes",
+                            "hash": "84e64826a2709895262fae947ec8c39f",
+                            "date": "2023-11-12 16:56:23.279029"
+                        }
+                    ]
+                }
+            ],
+            "files": [
+                {
+                    "id": "project",
+                    "name": "project",
+                    "type": "log",
+                    "size": "4.3 kB",
+                    "hash": "f7ec918a389e41ad9508b7278db2bec8",
+                    "date": "2023-11-12 16:56:21.468749"
+                }
+            ]
+        },
+        {
+            "id": "linting",
+            "name": "linting",
+            "size": 0,
+            "dirs": [
+                {
+                    "id": "pylint",
+                    "name": "pylint",
+                    "size": "0 bytes",
+                    "dirs": [
+                        {
+                            "id": "core",
+                            "name": "core",
+                            "size": "0 bytes",
+                            "dirs": [],
+                            "files": []
+                        },
+                        {
+                            "id": "app",
+                            "name": "app",
+                            "size": "0 bytes",
+                            "dirs": [],
+                            "files": []
+                        },
+                        {
+                            "id": "tests",
+                            "name": "tests",
+                            "size": "0 bytes",
+                            "dirs": [],
+                            "files": []
+                        }
+                    ],
+                    "files": []
+                }
+            ],
+            "files": []
+        },
+        {
+            "id": "testing",
+            "name": "testing",
+            "size": 0,
+            "dirs": [
+                {
+                    "id": "pytest",
+                    "name": "pytest",
+                    "size": "0 bytes",
+                    "dirs": [],
+                    "files": []
+                }
+            ],
+            "files": []
+        },
+        {
+            "id": "pydoc",
+            "name": "pydoc",
+            "size": "0 bytes",
+            "dirs": [
+                {
+                    "id": "core",
+                    "name": "core",
+                    "size": "0 bytes",
+                    "dirs": [],
+                    "files": []
+                },
+                {
+                    "id": "app",
+                    "name": "app",
+                    "size": "0 bytes",
+                    "dirs": [],
+                    "files": []
+                },
+                {
+                    "id": "tests",
+                    "name": "tests",
+                    "size": "0 bytes",
+                    "dirs": [],
+                    "files": []
+                }
+            ],
+            "files": []
+        }
+    ],
+    "files": [
+        {
+            "id": "pseudo",
+            "name": "pseudo",
+            "type": "code",
+            "size": "0 Bytes",
+            "hash": "d41d8cd98f00b204e9800998ecf8427e",
+            "date": "2023-11-12 16:41:29.147591"
+        }
+    ]
+}

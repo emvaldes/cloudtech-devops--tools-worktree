@@ -1,0 +1,305 @@
+## This workflow will install Python dependencies, run tests and lint with a single version of Python
+## For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Git Worktree Automation
+on:
+
+####----------------------------------------------------------------------------
+
+  workflow_dispatch:
+
+    name: Manual Deployment
+    description: 'Triggering Manual Deployment'
+
+    inputs:
+
+      update-system:
+        description: 'Updating the Operating System State'
+        required: false
+        default: false
+    
+      upgrade-system:
+        description: 'Upgrading the Operating System State'
+        required: false
+        default: false
+    
+      # python-version:
+      #   description: 'Defines target Python Version'
+      #   required: true
+      #   default: '3.11'
+    
+      # update-pip-version:
+      #   description: 'Updating the current PIP Version'
+      #   required: true
+      #   default: false
+    
+      install-default-tools:
+        description: 'Installing Default Toolset (DevOps)'
+        required: false
+        default: false
+    
+      install-custom-tools:
+        description: 'Installing Custom Toolset (DevOps)'
+        required: false
+        default: false
+    
+      install-python-requirements:
+        description: 'Installing Python Requirements'
+        required: false
+        default: false
+
+      storage-credentials:
+        description: 'Pipeline Storage Credentials'
+        required: false
+        default: false
+
+      storage-passphrase:
+        description: 'Pipeline Storage Passphrase'
+        required: false
+        default: false
+
+      application-parameters:
+        description: 'Pipeline Application Parameters'
+        required: false
+        default: false
+
+      verbose-mode:
+        description: 'Enabling Verbosity'
+        required: false
+        default: false
+
+      # debuger-mode:
+      #   description: 'Enabling Shell Debugger'
+      #   required: false
+      #   default: false
+    
+      # logLevel:
+      #   description: 'Log level'
+      #   required: false
+      #   default: 'warning'
+
+      # tags:
+      #   description: 'Evaluate Project Readiness'
+
+####----------------------------------------------------------------------------
+
+  push:
+
+    branches: [ "master" ]
+    paths:
+      - '*.*'
+
+####----------------------------------------------------------------------------
+
+env:
+
+  ## Variables: ----------------------------------------------------------------
+
+  ## Default/Custom toolset + Requirements
+  CUSTOM_TOOLS:  ${{ vars.CUSTOM_TOOLS }}
+  DEFAULT_TOOLS: ${{ vars.DEFAULT_TOOLS }}
+
+  ## Python Version
+  ## PYTHON_VERSION: ${{ vars.PYTHON_VERSION }}
+
+  ## Python (Packages) Requirements
+  PYTHON_REQUIREMENTS: ${{ vars.PYTHON_REQUIREMENTS }}
+  
+  ## Lintering Engine (e.g.: ruff, flake8, pylint, etc.)
+  ## e.g.: ruff --format=github --target-version=py310 . ;
+  LINTER_SYNTAX: ${{ vars.LINTER_SYNTAX }}
+
+  ## Update/Upgrade -> Python + PIP
+  UPDATE_PIP:     ${{ vars.UPDATE_PIP }}
+  UPDATE_PYTHON:  ${{ vars.UPDATE_PYTHON }}
+
+  ## Update/Upgrade -> System Components
+  UPDATE_SYSTEM:  ${{ vars.UPDATE_SYSTEM }}
+  UPGRADE_SYSTEM: ${{ vars.UPGRADE_SYSTEM }}
+
+  ## Debugger & Verbosity Mode
+  VERBOSE_MODE: ${{ vars.VERBOSE_MODE }}
+  DEBUGER_MODE: ${{ vars.DEBUGER_MODE }}
+
+  ## Execute Application
+  APPLICATION_PARAMETERS: ${{ vars.APPLICATION_PARAMETERS }}
+
+  ## Secrets: ------------------------------------------------------------------
+
+  ## SharePoint Credentials & Passphrase
+  SHAREPOINT_CREDENTIALS: "${{ secrets.SHAREPOINT_CREDENTIALS }}"
+  SHAREPOINT_PASSPHRASE:  "${{ secrets.SHAREPOINT_PASSPHRASE }}"
+
+####----------------------------------------------------------------------------
+
+permissions:
+  contents: read
+
+jobs:
+
+  evaluate-readiness:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+
+        python-version:   [ '3.11' ]
+        pytest-scripts:   [ 'tests/' ]
+        coverage-exclude: [ 'site-packages' ]
+
+    steps:
+
+####----------------------------------------------------------------------------
+## Checkout Repository
+
+      - name: checkout
+        uses: actions/checkout@v4
+
+####----------------------------------------------------------------------------
+## Session Timestamp
+
+      - name: Session Timestamp
+        id: session-timestamp
+        shell: bash
+        run: |
+
+          SESSION_TIMESTAMP="$(date +"%y%m%d%H%M%S")" ;
+          echo "SESSION_TIMESTAMP=${SESSION_TIMESTAMP}" >> ${GITHUB_ENV} ;
+
+        continue-on-error: false
+
+####----------------------------------------------------------------------------
+## Install Python Version
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+        continue-on-error: false
+
+####----------------------------------------------------------------------------
+## System Deployment
+
+      - name: System Deployment
+        uses: ./
+        id: system-deployment
+        with:
+
+          update-system:  ${UPDATE_SYSTEM}
+          upgrade-system: ${UPGRADE_SYSTEM}
+
+          # update-python-version: ${UPDATE_PYTHON}
+          # update-pip-version:    ${UPDATE_PIP}
+
+          install-default-tools: ${DEFAULT_TOOLS}
+          install-custom-tools:  ${CUSTOM_TOOLS}
+
+          install-python-requirements: ${PYTHON_REQUIREMENTS}
+
+          storage-credentials: ${SHAREPOINT_CREDENTIALS}
+          storage-passphrase:  ${SHAREPOINT_PASSPHRASE}
+
+          application-parameters: ${APPLICATION_PARAMETERS}
+
+          verbose-mode: ${VERBOSE_MODE}
+
+        continue-on-error: false
+
+####----------------------------------------------------------------------------
+## Installed System Packages
+
+      - name: Installed Packages
+        id: installed-packages
+        shell: bash
+        run: |
+
+          lsb_release -a ;
+          echo -e ;
+
+          jq --version 2>/dev/null ;
+          tree --version 2>/dev/null ;
+          echo -e ;
+
+          python --version 2>/dev/null ;
+          pip --version 2>/dev/null ;
+          echo -e ;
+
+          pytest --version 2>/dev/null ;
+          ruff --version 2>/dev/null ;
+          coverage --version 2>/dev/null ;
+
+        continue-on-error: false
+
+####----------------------------------------------------------------------------
+## Coverage Package Info
+
+      - name: Coverage Package Info
+        shell: bash
+        run: |
+          pip show coverage ;
+
+        continue-on-error: false
+
+####----------------------------------------------------------------------------
+## Pytest Package Info
+
+      - name: Pytest Package Info
+        shell: bash
+        run: |
+          pip show pytest ;
+
+        continue-on-error: false
+
+####----------------------------------------------------------------------------
+## Ruff Package Info
+
+      - name: Ruff Package Info
+        shell: bash
+        run: |
+          pip show ruff ;
+
+        continue-on-error: false
+
+####----------------------------------------------------------------------------
+## Python Linting with Ruff
+
+      - name: Linting with Ruff
+        shell: bash
+        run: |
+          eval "${{ env.LINTER_SYNTAX }}" ;
+
+        continue-on-error: false
+
+####----------------------------------------------------------------------------
+## Python -> Evaluate Testing
+
+      - name: PyTest -> Evaluate Testing
+        shell: bash
+        run: |
+          python -m pytest ${{ matrix.pytest-scripts }} --verbose ;
+
+        continue-on-error: false
+
+####----------------------------------------------------------------------------
+## Coverage -> Evaluate Testing
+
+      - name: Coverage -> Evaluate Testing
+        shell: bash
+        run: |
+          coverage run -m pytest ${{ matrix.pytest-scripts }} ;
+
+        continue-on-error: false
+
+####----------------------------------------------------------------------------
+## Coverage -> Evaluate Report
+
+      - name: Coverage -> Evaluate Report
+        shell: bash
+        run: |
+          coverage report | grep -v ${{ matrix.coverage-exclude }} ;
+
+        continue-on-error: false
+
+####----------------------------------------------------------------------------

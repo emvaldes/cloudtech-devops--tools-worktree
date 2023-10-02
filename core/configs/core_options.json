@@ -1,0 +1,110 @@
+{
+    "json": {
+        "name": [
+            "--json"
+        ],
+        "action": "store_true",
+        "default": false,
+        "dest": "json",
+        "help": "Display Script Configuration",
+        "required": false,
+        "question": false,
+        "example": false
+    },
+    "params": {
+        "name": [
+            "--params"
+        ],
+        "action": "store_true",
+        "default": false,
+        "dest": "params",
+        "help": "Display Input Parameters",
+        "required": false,
+        "question": false,
+        "example": false
+    },
+    "version": {
+        "name": [
+            "--version"
+        ],
+        "action": "store_true",
+        "default": false,
+        "dest": "version",
+        "help": "Display Version: %(prog)s 1.0",
+        "required": false,
+        "question": "Display Package version",
+        "example": false
+    },
+    "verbose": {
+        "name": [
+            "--verbose"
+        ],
+        "action": "store_true",
+        "default": false,
+        "dest": "verbose",
+        "help": "Enable|Disable verbosity",
+        "required": false,
+        "question": false,
+        "example": false
+    },
+    "debug": {
+        "name": [
+            "--debug"
+        ],
+        "action": "store_true",
+        "default": false,
+        "dest": "debug",
+        "help": "Debugging Code Execution",
+        "required": false,
+        "question": false,
+        "example": false
+    },
+    "help": {
+        "name": [
+            "--helper"
+        ],
+        "action": "store_true",
+        "default": false,
+        "dest": "help",
+        "help": "Show this help message and exits",
+        "required": false,
+        "question": "Display Program's Help",
+        "example": false
+    },
+    "info": {
+        "name": [
+            "--info"
+        ],
+        "action": "store_true",
+        "default": false,
+        "dest": "info",
+        "help": "Project Information and online references",
+        "required": false,
+        "question": "Display Project Information",
+        "example": false
+    },
+    "examples": {
+        "name": [
+            "--examples"
+        ],
+        "action": "store_true",
+        "default": false,
+        "dest": "examples",
+        "help": "Display script execution options",
+        "required": false,
+        "question": false,
+        "example": false
+    },
+    "wizard": {
+        "name": [
+            "--wizard"
+        ],
+        "action": "store_true",
+        "default": false,
+        "dest": "wizard",
+        "help": "Identify requests to be executed",
+        "required": false,
+        "question": "EnableInteractive User Interface",
+        "example": false
+    }
+}

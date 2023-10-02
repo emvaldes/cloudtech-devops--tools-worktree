@@ -1,0 +1,195 @@
+{
+    "params": {
+        "create": {
+            "name": [
+                "--create",
+                "--init"
+            ],
+            "action": "store_true",
+            "default": false,
+            "dest": "create",
+            "help": "Create Git Worktree",
+            "required": false
+        },
+        "destroy": {
+            "name": [
+                "--destroy"
+            ],
+            "action": "store_true",
+            "default": false,
+            "dest": "destroy",
+            "help": "Destroy Git Worktree",
+            "required": false
+        },
+        "display": {
+            "name": [
+                "--display"
+            ],
+            "action": "extend",
+            "dest": "display",
+            "help": "Display Application Assets",
+            "metavar": "display",
+            "nargs": "*",
+            "required": false
+        },
+        "download": {
+            "name": [
+                "--download"
+            ],
+            "action": "extend",
+            "dest": "download",
+            "help": "Download Application Assets",
+            "metavar": "download",
+            "nargs": "*",
+            "required": false
+        },
+        "enable": {
+            "name": [
+                "--enable"
+            ],
+            "action": "extend",
+            "dest": "enable",
+            "help": "Enable Application Features",
+            "metavar": "enable",
+            "nargs": "*",
+            "required": false
+        },
+        "export": {
+            "name": [
+                "--export"
+            ],
+            "action": "extend",
+            "dest": "export",
+            "help": "Export Application Assets",
+            "metavar": "export",
+            "nargs": "*",
+            "required": false
+        },
+        "format": {
+            "name": [
+                "--format"
+            ],
+            "action": "store",
+            "const": false,
+            "default": false,
+            "dest": "format",
+            "help": "Import/Export Data Format",
+            "metavar": "format",
+            "nargs": "?",
+            "required": false,
+            "type": "str"
+        },
+        "git-repo": {
+            "name": [
+                "--git-repo"
+            ],
+            "action": "store",
+            "const": false,
+            "default": false,
+            "dest": "git_repo",
+            "help": "Path to Git Repository",
+            "metavar": "git_repo",
+            "nargs": "?",
+            "required": false,
+            "type": "str"
+        },
+        "include": {
+            "name": [
+                "--add",
+                "--include"
+            ],
+            "action": "store",
+            "const": false,
+            "default": false,
+            "dest": "include",
+            "help": "Add Branch into Git Worktree",
+            "metavar": "include",
+            "nargs": "?",
+            "required": false,
+            "type": "str"
+        },
+        "local": {
+            "name": [
+                "--local"
+            ],
+            "action": "store_true",
+            "default": false,
+            "dest": "local",
+            "help": "All Branches into Git Worktree",
+            "required": false
+        },
+        "pass": {
+            "name": [
+                "--pass"
+            ],
+            "action": "store",
+            "const": false,
+            "default": false,
+            "dest": "password",
+            "help": "Encrypt/Decrypt Access Passphrase",
+            "metavar": "password",
+            "nargs": "1",
+            "required": false,
+            "type": "str"
+        },
+        "offline": {
+            "name": [
+                "--offline"
+            ],
+            "action": "store_true",
+            "default": false,
+            "dest": "local",
+            "help": "Disable Pull/Fetch Remote",
+            "required": false
+        },
+        "reload": {
+            "name": [
+                "--reload"
+            ],
+            "action": "store_true",
+            "default": false,
+            "dest": "reload",
+            "help": "Prune & Reload Git Branches",
+            "required": false
+        },
+        "remove": {
+            "name": [
+                "--remove"
+            ],
+            "action": "store",
+            "const": false,
+            "default": false,
+            "dest": "remove",
+            "help": "Remove branch from Git Repository",
+            "metavar": "remove",
+            "nargs": "?",
+            "required": false,
+            "type": "str"
+        },
+        "upload": {
+            "name": [
+                "--upload"
+            ],
+            "action": "extend",
+            "dest": "upload",
+            "help": "Upload Application Assets",
+            "metavar": "upload",
+            "nargs": "*",
+            "required": false
+        },
+        "worktree": {
+            "name": [
+                "--worktree"
+            ],
+            "action": "store",
+            "const": false,
+            "default": ".worktrees",
+            "dest": "worktree",
+            "help": "Default Git Worktree",
+            "metavar": "worktree",
+            "nargs": "?",
+            "required": false,
+            "type": "str"
+        }
+    }
+}

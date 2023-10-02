@@ -1,0 +1,51 @@
+{
+    "credentials": {
+        "client_id": "gAAAAABlULfraWnnH--xvqey8Fpeo5s_JfrMipQruBTiZhyFm7O1ncPwLgHtiq2xq-d0xt0d6WyD41s5KelFGZaSGBvj5m62lYKMkkvmv4HzSbHkm_PbZa-YnxgzQy5or_U35bTNdUxD",
+        "tenant_id": "gAAAAABlULfr5d1964OXWkiJwTkH29w2B8vnC1QOtNmpbOTnF_RobN3GNAJTLp3dk9wzquqXg2wwqyg31ekpyfmhOz5B7t3lEffsVr1Ai5nWgOn3Uc0n4QD1CANmLPC2O6HVVkJFIpEH",
+        "secret": {
+            "secret_id": "gAAAAABlULfr90ZuYSnTYHdgTI5AdVZKC5mvoyyjChlXsu-6EbUYADxkglrtr1J4QeOHDieTg7wV3qhxiDZ3ki3ZH8nuufSr8KsIFkCfemqzC9g0nrqgPeGn3kKyffi5-1eG4oiF2MJg",
+            "secret_value": "gAAAAABlULfrzg2RxBWsv9q2ECjWEXJUUERWBFeSSNRFe4Mo8pOJkeeU0gNn0W330VP6g6WpWry4mIUr6PbHkndriORCMFFQvZxzhZJGYeTFB4mBASBPlKNeCPttIIFjscqARzp38h4y",
+            "secret_ttl": "gAAAAABlULfrfTlQ4PElcqpMoBPPNaUu4mPuZ3OV4M04jIWJTErfEJpY5SCoPgjc4jNeY2QrBXlS_75TTAGqNGAg6iAaqwHTSw=="
+        },
+        "token": {
+            "token_value": "gAAAAABlULfrce9DXwWKOKccFsm0IKe2K8mQ5Aivbi3_zL1WZkb_40aIKNZzUgngcwdsrGiwxQF2FznmpAhKF1w5vSQl6NqQGmReYtP-QpfJM8qEFMLSEV3-iQLXsVG2afLXMtHGVPsvfTgEJmTqrdfqOdMZOWjDlHUVGKt_CFq--YbSAEkE2vAKpVtfG_teNPPl7pkccmDm6DV3loyxQxX7iOEB0wexQ-ymKiDDYVl592pIUAK7ZQ0AzvgCxCaYGUEZ8c4ewkOmTvL4DchoG7Pyd_VaBqniTgj3Hs750XkoVXn-Uv_OfxgKbYcJDLDBPQw3vkJsMrTYTPxpW3cYMduWg0hUbIpPK_FqDCGBzY97iH8hLykVjDExrD8W-0-KK4GnYR9aeRqesZ2CDHP4Vh7Vnj-2zFSzLE5HPAa5Ch-vQG9fjN70ABLq6Y_ZRul4RcgdZ5OcYMHgUXaesExGpWJj4eufOtuWEug-aIrrZBL7PpALnao6SNJ_pxEIkBZYZkCtGl7H-f-F9RrFTagYfY1vZNzngadw_J3RNpXufDcn5ME2fH6ywxF7lVhstFYZ9HYvkA5YP7--EE7wIgqT6UdLhQZKW9iWGohwwKaLwlI-1TLNWJzpVwVp484lbHGRspaqZuKRpqcWYK2tDlqWydU9snUvcZUaSpvK1WWknrZR-KbWo-qJPy2a-fYOUZfua8PxjtEjf5x77qhdaHKRWyGptFvkA1-oA9xxW28JR8yMVD5ES7GWKd6Wtgc9yiGCpaMSXNvK5UbUjpplciwjJibHWtgQ1gkIe5ToAJ7Fm4taq7zRwKVYpfJJhPJoOjvlKxfdkxQSOlAEOrq7QtFPJy9wHHM6XEmREXM-E69wnDBxCraLn5ilV49Bhak6i_zaLzdiH0iof9kz8afTWYC2AZqwyktyVjsyHIub0ztZz1CbAZEpHrZXyQ138Mh4xqnz2Y5TCpKADieKeDaot7PXuUEEZgSwrhxy5qSi68Fo6tNh4t_wO8EPGOXbYHVjsSJMJoxFS_EGW46JmqRIl4Q2JylyQ2XcKzzJiA688-Bix8LtWyxWhv-Sno2hJZUabN_LSx68zOjmZaAc7UbLRwI2GhQP4DZUtKyIGvZWxkXFOI6M-cXY8tNtm2c2Rp2w7ssPeWhKKVEppGcZXp7iQZbWigNxny7QAe3jGBQUuMQBEHLsWo2ySqu1qWeOfRHSTyHSk2VKsITK1w-fyoLWggluWS-yFNbSKHLSluCRQfkXUjjitvpZGgTYama2w6d3pjhnQ2bJgzWtwvTrjMhoTsGO8P14Rgob-bfCeuc6j1SXqPDepdZOsZ85KR3tXUIqd2PIaBT3efGcpB2p04FE9ST1tWk-fjWD5Bt6sMz_at5sSqNZ4eK-2MeQfvtuPTkPb0TASG_UwqRp5bSHHMctPDR4J6F7YFAx4H62hW3rcVUrSVLewed6SLf-Tpz0TkXS2b9Wa7QmVrZ7cQcKvTW6gAKN_OgTsOHd_kLH_U3STNevBY_Up9iFDTvICaNZAxzYWCN2j6kzLkL6Ha85OsCt0iBFsxbgfRPwsZE9scIZyFB1zYdtwR6i3e2tza4r-WC34vbA7Pwr9qAacXC1wc2MvpHqJjVOFQgRhlBFlIba5DV5mDnPfECV39Zuqh6p03R9r9PP8mzp8kvETULGPycdWMj36FsBTQQ2rTBnl1W0rsMr9xON-JF-Mt35nZg3KQDILhNOPf3gGjJsw0ahPwV_aykia_26XQugwRr3zp2MqPQoyVfgQd5XUlazNCDa7l15HI5IVFFOhi4haS8YVIggWdXhtNTlc0-zct8Yvyo0KdoqOI0_SXQD1M_bb1oxbxKLfIJ6e6D4x3ek--osH-Xf1yzALl4LfwF0BV5EQHti33gHRPiy-LBmdtnUV2c5sgZca3bVexzIOl5javDo9HLwZeiOyVCM3gDPYrcYuQwHy9ENc4CCtzoSO8BtYrPGuJPQxSN_FqaezduoZ-hSU16SsajfA99jnbrELbtvOz0yHjTeZZEk7faaOZ1Lli4qsUdTLz2fExY4TYcxnRIdzMkV94iSQEegzVImYqoi8_w7AJE9bS6CWunAy3zX27ht9YtiiAx9iNN6QKkroFaokaZPjrjLQKL3Uj1Mv5o2tnItdU2wcPtUElKo8k6PGfJEwj0nBS7irUIHRUO2MS5l",
+            "token_ttl": "gAAAAABlULfrUBNES--TkEZWJOKYAemJCwUwK6L8Io5C9SQE8k-CmwwQgWLIjVLS7_UdbC7XEoWP4LpJDSw7EdVZtrH47m4EMDzFmvMmNko9xaSTa52-z4s="
+        },
+        "site_id": "gAAAAABlULfr1n7waKR_5LJ9JqP4T8rq80Ktw7tfbxNeyvdTzXwXdflPShJhOHXl_dQQ2mGWvu5i7KTzPSYkgoNJvix8hHoNdFNgDB0Z-d_IBZD1kex_0V3cWimmKFJXfX0m1zsnkZAY",
+        "drive_id": "gAAAAABlULfrU5RHj3isCE5-JyQ1SkuTdpdWc5t3wCcYQxuIKfwExyWHlTf6h7FKwldxoi6sRIK9VwSm2__RJnPiKtcJTNZkHdq23GKIGWXHDln7KPu7IWYTRwN22Sez6PpUnBDz2jfYb0KBGKspDJTVNGUv4YT_j8BbCbunARf5ib7243JvAX0="
+    },
+    "locations": {
+        "console": "",
+        "site_name": "DevNetOpsEngineers",
+        "library": "Documents",
+        "project": "Projects/NetSrv-DevOps/Worktree",
+        "import": {
+            "local": "data:imports",
+            "remote": "Downloads",
+            "files": [
+                {
+                    "name": "template-downloads.json",
+                    "target": "template.json"
+                }
+            ],
+            "action": "latest"
+        },
+        "export": {
+            "local": "tests:configs",
+            "remote": "Uploads",
+            "archive": "Archives",
+            "files": [
+                {
+                    "name": "buckets.json",
+                    "target": "buckets-uploads.json"
+                },
+                {
+                    "name": "project.json",
+                    "target": "project-uploads.json"
+                }
+            ],
+            "action": "archive"
+        },
+        "update": true
+    }
+}

@@ -1,0 +1,5 @@
+************* Module storage.sharepoint
+core/modules/storage/sharepoint.py:27: [R0904(too-many-public-methods), SharePoint] Too many public methods (22/20)
+
+------------------------------------------------------------------
+Your code has been rated at 9.98/10 (previous run: 9.98/10, +0.00)

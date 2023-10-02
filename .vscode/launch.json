@@ -1,0 +1,59 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Worktree - Display JSON Workspace",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/project.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--json"
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "Worktree - Display JSON Workspace",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/project.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--verbose"
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "Worktree - Enable SharePoint Storage",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/project.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--params",
+                "--enable",
+                "sharepoint",
+                "--display",
+                "config",
+                "--display",
+                "files",
+                "--download",
+                "--upload",
+                "--verbose",
+                "--debug"
+            ],
+            "justMyCode": true
+        }
+    ]
+}

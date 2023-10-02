@@ -1,0 +1,106 @@
+{
+    "script": {
+        "info": {
+            "id": "worktree-workflows",
+            "name": "Git Worktree Workflows",
+            "description": "Git Worktree Workflows",
+            "status": "completed",
+            "client": {
+                "id": "netsrv-devops",
+                "name": "Global Network Platforms",
+                "tasks": [
+                    {
+                        "id": "requirements",
+                        "description": "Identify Product Requirements",
+                        "status": "completed"
+                    },
+                    {
+                        "id": "evaluation",
+                        "description": "Product Evaluation and Testing",
+                        "status": "completed"
+                    },
+                    {
+                        "id": "acceptance",
+                        "description": "Product Acceptance and Approval",
+                        "status": "completed"
+                    }
+                ]
+            },
+            "team": {
+                "lead": {
+                    "id": "eduardo.valdes",
+                    "name": "Eduardo Valdes",
+                    "email": "eduardo.valdes@takeda.com",
+                    "tasks": [
+                        {
+                            "id": "worktree",
+                            "description": "Git Worktree Workflows",
+                            "status": "completed"
+                        }
+                    ]
+                },
+                "devops": []
+            },
+            "readme": "README.md"
+        },
+        "package": {
+            "name": "worktree",
+            "description": "Git Worktree Workflows",
+            "version": {
+                "major": 0,
+                "minor": 1,
+                "patch": 0
+            }
+        }
+    },
+    "storage": {
+        "sharepoint": {
+            "console": "",
+            "site_name": "DevNetOpsEngineers",
+            "library": "Documents",
+            "project": "Projects/NetSrv-DevOps/Worktree",
+            "import": {
+                "local": "data:imports",
+                "remote": "Downloads",
+                "files": [
+                    {
+                        "name": "template-downloads.json",
+                        "target": "template.json"
+                    }
+                ],
+                "action": "latest"
+            },
+            "export": {
+                "local": "tests:configs",
+                "remote": "Uploads",
+                "archive": "Archives",
+                "files": [
+                    {
+                        "name": "buckets.json",
+                        "target": "buckets-uploads.json"
+                    },
+                    {
+                        "name": "project.json",
+                        "target": "project-uploads.json"
+                    }
+                ],
+                "action": "archive"
+            },
+            "update": true
+        }
+    },
+    "assets": [
+        {
+            "file": "app_buckets.json",
+            "bucket": "project"
+        },
+        {
+            "file": "app_options.json",
+            "bucket": "script.options"
+        },
+        {
+             "file": "app_datasets.json",
+             "bucket": "dataset"
+        }
+    ]
+}
