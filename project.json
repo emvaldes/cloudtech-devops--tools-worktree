@@ -1,0 +1,123 @@
+{
+    "script": {
+        "info": {
+            "repo": "",
+            "team": {
+                "id": "netsrv-devops",
+                "name": "Global Network Services"
+            },
+            "devops": [
+                {
+                    "name": "Eduardo Valdes",
+                    "email": "eduardo.valdes@company.com"
+                }
+            ],
+            "readme": "README.md"
+        },
+        "package": {
+            "name": "",
+            "description": "Git Worktree Workflows",
+            "path": "",
+            "script": "",
+            "configs": "",
+            "version": {
+                "major": 0,
+                "minor": 1,
+                "patch": 0
+            }
+        },
+        "buckets": "",
+        "exports": {
+            "config": {
+                "path": "",
+                "name": "",
+                "type": "json",
+                "indent": 4
+            }
+        },
+        "options": "",
+        "features": {
+            "required": [],
+            "optional": [],
+            "examples": [
+                [
+                    "create|init"
+                ],
+                [
+                    "destroy"
+                ],
+                [
+                    "git-repo"
+                ],
+                [
+                    "add|include"
+                ],
+                [
+                    "list|display"
+                ],
+                [
+                    "local"
+                ],
+                [
+                    "offline"
+                ],
+                [
+                    "reload"
+                ],
+                [
+                    "remove"
+                ],
+                [
+                    "worktree"
+                ],
+                [
+                    "json"
+                ],
+                [
+                    "params"
+                ],
+                [
+                    "verbose"
+                ],
+                [
+                    "version"
+                ],
+                [
+                    "help"
+                ],
+                [
+                    "info"
+                ],
+                [
+                    "examples"
+                ],
+                [
+                    "wizard"
+                ]
+            ]
+        },
+        "input": {
+            "args": {}
+        },
+        "helper": {
+            "formatter": "default",
+            "headers": {
+                "interview": "Please, answer the following questions"
+            }
+        }
+    },
+    "assets": [
+        {
+            "file": "app_buckets.json",
+            "bucket": "project"
+        },
+        {
+            "file": "app_options.json",
+            "bucket": "script.options"
+        },
+        {
+             "file": "app_datasets.json",
+             "bucket": "dataset"
+         }
+    ]
+}

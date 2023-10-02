@@ -1,0 +1,41 @@
+{
+    "id": "worktree-workflows",
+    "name": "Git Worktree Workflows",
+    "description": "Git Worktree Workflows",
+    "status": "active",
+    "client": {
+        "id": "project.manager",
+        "name": "Project Manager",
+        "email": "project.manager@company.com",
+        "tasks": [
+            {
+                "id": "requirements",
+                "description": "Identify Product Requirements",
+                "status": "pending"
+            },
+            {
+                "id": "evaluation",
+                "description": "Production Evaluation and Testing",
+                "status": "pending"
+            },
+            {
+                "id": "acceptance",
+                "description": "Production Acceptance and Approval",
+                "status": "pending"
+            }
+        ]
+    },
+    "lead": {
+        "id": "eduardo.valdes",
+        "name": "Eduardo Valdes",
+        "email": "eduardo.valdes@company.com",
+        "tasks": [
+            {
+                "id": "worktree",
+                "description": "Git Worktree Workflows",
+                "status": "in-progress"
+            }
+        ]
+    },
+    "devops": []
+}

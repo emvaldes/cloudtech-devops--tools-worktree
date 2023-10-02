@@ -1,0 +1,93 @@
+#!/usr/bin/env bash
+
+project='project' ;
+
+# ## Pre-Purging Cached Data
+
+# find . -type d -name '.pytest_cache' | xargs rm -rf ;
+# find . -type d -name '.ruff_cache' | xargs rm -rf ;
+# find . -type d -name '__pycache__' | xargs rm -rf ;
+
+# ## PyLint report
+
+# pylint *.py --verbose \
+#     | grep -v '/usr/local/lib/' \
+#     | cat -s | tee docs/linting/pylint/project.log ;
+
+# pylint core/*.py --verbose \
+#     | grep -v '/usr/local/lib/' \
+#     | cat -s | tee docs/linting/pylint/core_mods.log ;
+
+# pylint app/*.py --verbose \
+#     | grep -v '/usr/local/lib/' \
+#     | cat -s | tee docs/linting/pylint/app_mods.log ;
+
+# pylint tests/*.py --verbose \
+#     | grep -v '/usr/local/lib/' \
+#     | cat -s | tee docs/linting/pylint/testing.log ;
+
+# ## Coverage report
+
+# coverage run "${project}.py" --verbose ;
+# coverage report --show-missing | grep -v '/usr/local/lib/' | tee docs/coverage/project.log ;
+
+# ## PyTest Coverage report
+
+# pytest --cov-report html:docs/coverage/html/app_mods --cov app/ --verbose
+# coverage report --show-missing | cat -s | tee -a docs/coverage/mods/app_mods.log ;
+
+# pytest --cov-report html:docs/coverage/html/core_mods --cov core/ --verbose
+# coverage report --show-missing | cat -s | tee -a docs/coverage/mods/core_mods.log ;
+
+# pytest --cov-report html:docs/coverage/html/tests_mods --cov tests/ --verbose
+# coverage report --show-missing | cat -s | tee -a docs/coverage/mods/tests_mods.log ;
+
+## PyDoc report (Markdown): project.py
+
+for file in $(ls -1 "${project}.py" | grep -v '__init__.py') ; do
+    echo "\`\`\`console" > docs/pydoc/${file/.py/}.md
+    python -m pydoc $file | cat -s >> docs/pydoc/${file/.py/}.md ;
+    echo "\`\`\`" >> docs/pydoc/${file/.py/}.md
+    sed -i '' -e "s:$( pwd )/::g" \
+              -e "s:'$( pwd )':os.getcwd():g" \
+              docs/pydoc/${file/.py/}.md ;
+done
+
+## PyDoc report (Markdown): core/*.py
+
+for file in $(ls -1 core/*.py | grep -v '__init__.py') ; do
+    echo "\`\`\`console" > docs/pydoc/${file/.py/}.md
+    python -m pydoc $file | cat -s >> docs/pydoc/${file/.py/}.md ;
+    echo "\`\`\`" >> docs/pydoc/${file/.py/}.md
+    sed -i '' -e "s:$( pwd )/::g" \
+              -e "s:'$( pwd )':os.getcwd():g" \
+              docs/pydoc/${file/.py/}.md ;
+done
+
+## PyDoc report (Markdown): app/*.py
+
+for file in $(ls -1 app/*.py | grep -v '__init__.py') ; do
+    echo "\`\`\`console" > docs/pydoc/${file/.py/}.md
+    python -m pydoc $file | cat -s >> docs/pydoc/${file/.py/}.md ;
+    echo "\`\`\`" >> docs/pydoc/${file/.py/}.md
+    sed -i '' -e "s:$( pwd )/::g" \
+              -e "s:'$( pwd )':os.getcwd():g" \
+              docs/pydoc/${file/.py/}.md ;
+done
+
+## PyDoc report (Markdown): tests/*.py
+
+for file in $(ls -1 tests/*.py | grep -v '__init__.py') ; do
+    echo "\`\`\`console" > docs/pydoc/${file/.py/}.md
+    python -m pydoc $file | cat -s >> docs/pydoc/${file/.py/}.md ;
+    echo "\`\`\`" >> docs/pydoc/${file/.py/}.md
+    sed -i '' -e "s:$( pwd )/::g" \
+              -e "s:'$( pwd )':os.getcwd():g" \
+              docs/pydoc/${file/.py/}.md ;
+done
+
+## Post-Purging Cached Data
+
+find . -type d -name '.pytest_cache' | xargs rm -rf ;
+find . -type d -name '.ruff_cache' | xargs rm -rf ;
+find . -type d -name '__pycache__' | xargs rm -rf ;

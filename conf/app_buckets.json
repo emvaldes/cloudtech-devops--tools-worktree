@@ -1,0 +1,36 @@
+{
+    "buckets": {
+        "id": "buckets",
+        "dirs": [
+            {
+                "id": "cache",
+                "name": "cache",
+                "size":"0 bytes",
+                "dirs": [],
+                "files": []
+            },
+            {
+                "id": "data",
+                "name": "data",
+                "size":"0 bytes",
+                "dirs": [],
+                "files": []
+            },
+            {
+                "id": "imports",
+                "name": "imports",
+                "size":"0 bytes",
+                "dirs": [],
+                "files": []
+            },
+            {
+                "id": "reports",
+                "name": "reports",
+                "size":"0 bytes",
+                "dirs": [],
+                "files": []
+            }
+        ],
+        "files": []
+    }
+}

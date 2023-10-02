@@ -1,0 +1,123 @@
+{
+    "params": {
+        "create": {
+            "name": [
+                "--create",
+                "--init"
+            ],
+            "action": "store_true",
+            "default": false,
+            "dest": "create",
+            "help": "Create Git Worktree",
+            "required": false
+        },
+        "destroy": {
+            "name": [
+                "--destroy"
+            ],
+            "action": "store_true",
+            "default": false,
+            "dest": "destroy",
+            "help": "Destroy Git Worktree",
+            "required": false
+        },
+        "git-repo": {
+            "name": [
+                "--git-repo"
+            ],
+            "action": "store",
+            "const": false,
+            "default": false,
+            "dest": "git_repo",
+            "help": "Path to Git Repository",
+            "metavar": "git_repo",
+            "nargs": "?",
+            "required": false,
+            "type": "str"
+        },
+        "include": {
+            "name": [
+                "--add",
+                "--include"
+            ],
+            "action": "store",
+            "const": false,
+            "default": false,
+            "dest": "include",
+            "help": "Add Branch into Git Worktree",
+            "metavar": "include",
+            "nargs": "?",
+            "required": false,
+            "type": "str"
+        },
+        "list": {
+            "name": [
+                "--list",
+                "--display"
+            ],
+            "action": "store_true",
+            "default": false,
+            "dest": "list",
+            "help": "Listing Git Worktree",
+            "required": false
+        },
+        "local": {
+            "name": [
+                "--local"
+            ],
+            "action": "store_true",
+            "default": false,
+            "dest": "local",
+            "help": "All Branches into Git Worktree",
+            "required": false
+        },
+        "offline": {
+            "name": [
+                "--offline"
+            ],
+            "action": "store_true",
+            "default": false,
+            "dest": "local",
+            "help": "Disable Pull/Fetch Remote",
+            "required": false
+        },
+        "reload": {
+            "name": [
+                "--reload"
+            ],
+            "action": "store_true",
+            "default": false,
+            "dest": "reload",
+            "help": "Prune & Reload Git Branches",
+            "required": false
+        },
+        "remove": {
+            "name": [
+                "--remove"
+            ],
+            "action": "store",
+            "const": false,
+            "default": false,
+            "dest": "remove",
+            "help": "Remove branch from Git Repository",
+            "metavar": "remove",
+            "nargs": "?",
+            "required": false,
+            "type": "str"
+        },
+        "worktree": {
+            "name": [
+                "--worktree"
+            ],
+            "action": "store",
+            "const": false,
+            "default": ".worktrees",
+            "dest": "worktree",
+            "help": "Default Git Worktree",
+            "metavar": "worktree",
+            "nargs": "?",
+            "required": false,
+            "type": "str"
+        }
+    }
+}

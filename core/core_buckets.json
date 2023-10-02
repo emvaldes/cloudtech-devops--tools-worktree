@@ -1,0 +1,183 @@
+{
+    "buckets": {
+        "id": "buckets",
+        "dirs": [
+            {
+                "id": "docs",
+                "name": "docs",
+                "size":"0 bytes",
+                "dirs": [
+                    {
+                        "id": "coverage",
+                        "name": "coverage",
+                        "size": "0 bytes",
+                        "dirs": [
+                            {
+                                "id": "html",
+                                "name": "html",
+                                "size": "0 bytes",
+                                "dirs": [],
+                                "files": []
+                            },
+                            {
+                                "id": "mods",
+                                "name": "mods",
+                                "size": "0 bytes",
+                                "dirs": [],
+                                "files": [
+                                    {
+                                        "id": "core_mods",
+                                        "name": "core_mods",
+                                        "type": "log",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "app_mods",
+                                        "name": "app_mods",
+                                        "type": "log",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "tests_mods",
+                                        "name": "tests_mods",
+                                        "type": "log",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    }
+                        
+                                ]
+                            }
+                        ],
+                        "files": [
+                            {
+                                "id": "project",
+                                "name": "project",
+                                "type": "log",
+                                "size": "0 bytes",
+                                "hash": "",
+                                "date": "0"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "linting",
+                        "name": "linting",
+                        "size": 0,
+                        "dirs": [
+                            {
+                                "id": "pylint",
+                                "name": "pylint",
+                                "size": "0 bytes",
+                                "dirs": [],
+                                "files": [
+                                    {
+                                        "id": "project",
+                                        "name": "project",
+                                        "type": "log",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "core_mods",
+                                        "name": "core_mods",
+                                        "type": "log",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "app_mods",
+                                        "name": "app_mods",
+                                        "type": "log",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "testing",
+                                        "name": "testing",
+                                        "type": "log",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    }
+                                ]        
+                            }
+                        ],
+                        "files": []
+                    },
+                    {
+                        "id": "pydoc",
+                        "name": "pydoc",
+                        "size": "0 bytes",
+                        "dirs": [
+                            {
+                                "id": "core",
+                                "name": "core",
+                                "size": "0 bytes",
+                                "dirs": [],
+                                "files": []
+                            },
+                            {
+                                "id": "app",
+                                "name": "app",
+                                "size": "0 bytes",
+                                "dirs": [],
+                                "files": []
+                            },
+                            {
+                                "id": "tests",
+                                "name": "tests",
+                                "size": "0 bytes",
+                                "dirs": [],
+                                "files": []
+                            }
+                        ],
+                        "files": []
+                    }
+                ],
+                "files": [
+                    {
+                        "id": "pseudo",
+                        "name": "pseudo",
+                        "type": "code",
+                        "size": "0 bytes",
+                        "hash": "",
+                        "date": "0"
+                    }
+                ]
+            },
+            {
+                "id": "exports",
+                "name": "exports",
+                "size":"0 bytes",
+                "dirs": [
+                    {
+                        "id": "config",
+                        "name": "config",
+                        "size": "0 bytes",
+                        "dirs": [],
+                        "files": [
+                            {
+                                "id": "project",
+                                "name": "project",
+                                "type": "json",
+                                "size": "0 bytes",
+                                "hash": "",
+                                "date": "0"
+                            }
+                        ]
+                    }
+                ],
+                "files": []
+            }
+        ],
+        "files": []
+    }
+}
