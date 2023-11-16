@@ -327,14 +327,6 @@
                 "date": "0"
             },
             {
-                "id": "action",
-                "name": "action",
-                "type": "yaml",
-                "size": "0 bytes",
-                "hash": "",
-                "date": "0"
-            },
-            {
                 "id": "project",
                 "name": "project",
                 "type": "json",

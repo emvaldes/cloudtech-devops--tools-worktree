@@ -1,0 +1,131 @@
+#!/usr/bin/env bash
+
+####----------------------------------------------------------------------
+function activate_python3 () {
+    oIFS="${IFS}" ;
+    for xitem in "${@}"; do
+      IFS='='; set `echo -e "${xitem}" | sed -e '1s|^\(-\)\{1,\}||'`
+      [[ ${1#*\--} = "action" ]] && export activate_latest="${2}" ;
+      [[ ${1#*\--} = "platform" ]] && export system_platform="${2}" ;
+      [[ ${1#*\--} = "verbose" ]] && {
+        export verbose='true' ;
+        set -x ;
+      };
+    done; IFS="${oIFS}";
+    [[ ${#activate_latest} -eq 0 ]] && export activate_latest='false' ;
+    [[ ${#system_platform} -eq 0 ]] && export system_platform='false' ;
+    [[ ${#verbose} -eq 0 ]] && export verbose='false' ;
+    #### -----------------------------------------------------------------
+    if [[ ${activate_latest} == true ]]; then
+      local message="Linking Python (latest: 3.x)" ;
+      echo -e "\n${message} ..." ;
+      if [[ ${system_platform} == 'ubuntu' ]]; then
+        cd /usr/bin ;
+        sudo ln -fs python3 python ;
+        python --version ;
+      fi;
+    fi;
+    return 0;
+  }; alias activate-python3='activate_python3' ;
+
+####----------------------------------------------------------------------
+function python_pip3 () {
+    oIFS="${IFS}" ;
+    for xitem in "${@}"; do
+      IFS='='; set `echo -e "${xitem}" | sed -e '1s|^\(-\)\{1,\}||'`
+      [[ ${1#*\--} = "action" ]] && export upgrade_latest="${2}" ;
+      [[ ${1#*\--} = "platform" ]] && export system_platform="${2}" ;
+      [[ ${1#*\--} = "verbose" ]] && {
+        export verbose='true' ;
+        set -x ;
+      };
+    done; IFS="${oIFS}";
+    [[ ${#upgrade_latest} -eq 0 ]] && export upgrade_latest='false' ;
+    [[ ${#system_platform} -eq 0 ]] && export system_platform='false' ;
+    [[ ${#verbose} -eq 0 ]] && export verbose='false' ;
+    #### -----------------------------------------------------------------
+    if [[ ${upgrade_latest} == true ]]; then
+      local message="Install/Upgrade python3-pip" ;
+      echo -e "\n${message} ..." ;
+      if [[ ${system_platform} == 'ubuntu' ]]; then
+        sudo apt install python3-pip --yes 2>/dev/null ;
+      fi;
+      python -m pip install --upgrade pip 2>/dev/null ;
+      pip --version ;
+    fi;
+    return 0;
+  }; alias python-pip3='python_pip3' ;
+
+####----------------------------------------------------------------------
+function python_requirements () {
+    oIFS="${IFS}" ;
+    for xitem in "${@}"; do
+      IFS='='; set `echo -e "${xitem}" | sed -e '1s|^\(-\)\{1,\}||'`
+      [[ ${1#*\--} = "action" ]] && export install_packages="${2}" ;
+      [[ ${1#*\--} = "requirements" ]] && declare -a requirements="${2}" ;
+      [[ ${1#*\--} = "platform" ]] && export system_platform="${2}" ;
+      [[ ${1#*\--} = "verbose" ]] && {
+        export verbose='true' ;
+        set -x ;
+      };
+    done; IFS="${oIFS}";
+    [[ ${#install_packages} -eq 0 ]] && export install_packages='false' ;
+    [[ ${#requirements} -eq 0 ]] && export requirements='false' ;
+    [[ ${#system_platform} -eq 0 ]] && export system_platform='false' ;
+    [[ ${#verbose} -eq 0 ]] && export verbose='false' ;
+    #### -----------------------------------------------------------------
+    if [[ ${install_packages} == true ]]; then
+      local message="Installing Python Requirements" ;
+      local requirements_listing="/tmp/requirements.list" ;
+      declare -a requirements=($(
+        echo -e "${requirements}" | base64 -d | dos2unix | tr ' ' '\n'
+      )) ;
+      if [[ 
+            ( "${#requirements[@]}" -gt 0 ) && 
+            ( "${requirements[@]}" != 'false' ) 
+          ]]; then
+              echo -e ${requirements[@]} \
+                  | tr '[[:blank:]]' '\n' \
+                  | sed '/^$/d' \
+                  | sort -n | uniq - \
+                  | dos2unix \
+              > "${requirements_listing}" ;
+              if [ -f "${requirements_listing}" ]; then
+                      echo -e "\nRequirements:\n\n$(
+                        cat "${requirements_listing}"
+                      )" ;
+                      local total_entries=$(
+                        wc -w "${requirements_listing}" | awk '{print $1}'
+                      ) ;
+                      if [[ "${total_entries}" -gt 0 ]]; then
+                              echo -e "\n${message} ..." ;
+                              pip install -r "${requirements_listing}" ;
+                        else  echo -e "Warning: "${requirements_listing}" is empty! " ;
+                      fi;
+                else  echo -e "Warning: "${requirements_listing}" was not found";
+              fi;
+        else  echo -e "\nSkip: ${message}! " ;
+      fi;
+    fi;
+    return 0;
+  }; alias python-requirements='python_requirements' ;
+
+declare -a params=("${@}") ;
+# echo -e "\nParams: ${params[*]}" ;
+unset params[0] params[1]
+
+script="${1}" ;
+action="${2}" ;
+
+case "${script}" in
+  'activate-python3' )
+    eval "activate_python3 --action=${action} ${params[*]}" ;
+  ;;
+  'python-pip3' )
+    eval "python_pip3 --action=${action} ${params[*]}" ;
+  ;;
+  'python-requirements' )
+    eval "python_requirements --action=${action} ${params[*]}" ;
+  ;;
+  * ) echo -e "Skiping: ${@}" ;;
+esac ;

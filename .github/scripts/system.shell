@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+
+####----------------------------------------------------------------------
+function update_system () {
+    oIFS="${IFS}" ;
+    for xitem in "${@}"; do
+      IFS='='; set `echo -e "${xitem}" | sed -e '1s|^\(-\)\{1,\}||'`
+      [[ ${1#*\--} = "action" ]] && export update_request="${2}" ;
+      [[ ${1#*\--} = "platform" ]] && export system_platform="${2}" ;
+      [[ ${1#*\--} = "verbose" ]] && {
+        export verbose='true' ;
+        set -x ;
+      };
+    done; IFS="${oIFS}";
+    [[ ${#update_request} -eq 0 ]] && export update_request='false' ;
+    [[ ${#system_platform} -eq 0 ]] && export system_platform='false' ;
+    [[ ${#verbose} -eq 0 ]] && export verbose='false' ;
+    #### -----------------------------------------------------------------
+    if [[ ${update_request} == true ]]; then
+      local message="Updating Operating System (${system_platform})" ;
+      echo -en "\n${message} ..." ;
+      if [[ ${system_platform} == 'ubuntu' ]]; then
+        sudo apt-get update --yes 2>&1>/dev/null ;
+      fi;
+      echo -e " done." ;
+    fi;
+    return 0;
+  }; alias update-system='update_system' ;
+
+####----------------------------------------------------------------------
+function system_environment () {
+    oIFS="${IFS}" ;
+    for xitem in "${@}"; do
+      IFS='='; set `echo -e "${xitem}" | sed -e '1s|^\(-\)\{1,\}||'`
+      [[ ${1#*\--} = "action" ]] && export display_environment="${2}" ;
+      [[ ${1#*\--} = "platform" ]] && export system_platform="${2}" ;
+      [[ ${1#*\--} = "verbose" ]] && {
+        export verbose='true' ;
+        set -x ;
+      };
+    done; IFS="${oIFS}";
+    [[ ${#display_environment} -eq 0 ]] && export display_environment='false' ;
+    [[ ${#system_platform} -eq 0 ]] && export system_platform='false' ;
+    [[ ${#verbose} -eq 0 ]] && export verbose='false' ;
+    #### -----------------------------------------------------------------
+    if [[ ${display_environment} == true ]]; then
+      echo -e "System Path:" ;
+      echo $PATH | tr ':' '\n' 2>/dev/null ;
+      echo -e "\nEnvironment variables:" ;
+      env 2>/dev/null ;
+    fi;
+    return 0;
+  }; alias system-environment='system_environment' ;
+
+declare -a params=("${@}") ;
+# echo -e "\nParams: ${params[*]}" ;
+unset params[0] params[1]
+
+script="${1}" ;
+action="${2}" ;
+
+case "${script}" in
+  'update-system' )
+    eval "update_system --action=${action} ${params[*]}" ;
+  ;;
+  'system-environment' )
+    eval "system_environment --action=${action} ${params[*]}" ;
+  ;;
+  * ) echo -e "Skiping: ${@}" ;;
+esac ;

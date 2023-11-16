@@ -1,0 +1,137 @@
+#!/usr/bin/env bash
+
+####----------------------------------------------------------------------
+function application_parameters () {
+    oIFS="${IFS}" ;
+    for xitem in "${@}"; do
+      IFS='='; set `echo -e "${xitem}" | sed -e '1s|^\(-\)\{1,\}||'`
+      [[ ${1#*\--} = "action" ]] && export enable_storage="${2}" ;
+      [[ ${1#*\--} = "parameters" ]] && export input_parameters="${2}" ;
+      [[ ${1#*\--} = "platform" ]] && export system_platform="${2}" ;
+      [[ ${1#*\--} = "verbose" ]] && {
+        export verbose='true' ;
+        set -x ;
+      };
+    done; IFS="${oIFS}";
+    #### -----------------------------------------------------------------
+    [[ ${#enable_storage} -eq 0 ]] && export enable_storage='false' ;
+    [[ ${#input_parameters} -eq 0 ]] && export input_parameters='false' ;
+    [[ ${#system_platform} -eq 0 ]] && export system_platform='false' ;
+    [[ ${#verbose} -eq 0 ]] && export verbose='false' ;
+    #### -----------------------------------------------------------------
+    if [[ ${enable_storage} == true ]]; then
+      if [[ ${#input_parameters} -gt 0 ]]; then
+        parameters="$(
+          echo -e "${input_parameters}" | base64 -d | dos2unix
+        )" ;
+        local sanitized='' ;
+        if [[ ${parameters} =~ 'project.py' ]]; then
+          sanitized="$(
+            echo -e "${parameters}" \
+                | sed -e 's|project.py||g' \
+                      -e 's|--params ||g' \
+                      -e 's|\([[:blank:]]\)\{1,\}| |g'
+          )" ;
+          parameters="${sanitized}" ;
+        fi ;
+        if [[ ${system_platform} == 'ubuntu' ]]; then
+          sanitized="$(
+            echo -e "${parameters}" \
+              | sed -e 's|\-\-params ||g' \
+              | sed -e 's|\;||g' -e 's|\([[:blank:]]\)\{1,\}$||'
+          )" ;
+          export PARAMETERS="${sanitized}" ;
+          ## Displaying Application Parameters
+          echo -e "${PARAMETERS}" \
+             | sed -e "s|^\([[:blank:]]\)\{1,\}\(.*\)$|\2|g" ;
+          return 0 ;
+        fi ;
+      fi ;
+    fi ;
+    return 0;
+  }; alias application-parameters='application_parameters' ;
+
+####----------------------------------------------------------------------
+function application_deployment () {
+    oIFS="${IFS}" ;
+    for xitem in "${@}"; do
+      IFS='='; set `echo -e "${xitem}" | sed -e '1s|^\(-\)\{1,\}||'`
+      [[ ${1#*\--} = "action" ]] && export deploy_package="${2}" ;
+      [[ ${1#*\--} = "credentials" ]] && export storage_credentials="${2}" ;
+      [[ ${1#*\--} = "passphrase" ]] && export storage_passphrase="${2}" ;
+      [[ ${1#*\--} = "parameters" ]] && export input_parameters="${2}" ;
+      [[ ${1#*\--} = "workspace" ]] && export workspace="${2}" ;
+      [[ ${1#*\--} = "platform" ]] && export system_platform="${2}" ;
+      [[ ${1#*\--} = "verbose" ]] && {
+        export verbose='true' ;
+        set -x ;
+      };
+    done; IFS="${oIFS}";
+    #### -----------------------------------------------------------------
+    [[ ${#deploy_package} -eq 0 ]] && export deploy_package='false' ;
+    [[ ${#storage_credentials} -eq 0 ]] && export storage_credentials='false' ;
+    [[ ${#storage_passphrase} -eq 0 ]] && export storage_passphrase='false' ;
+    [[ ${#input_parameters} -eq 0 ]] && export input_parameters='false' ;
+    [[ ${#workspace} -eq 0 ]] && export workspace='false' ;
+    [[ ${#system_platform} -eq 0 ]] && export system_platform='false' ;
+    [[ ${#verbose} -eq 0 ]] && export verbose='false' ;
+    #### -----------------------------------------------------------------
+    if [[ ${deploy_package} == true ]]; then
+      if [[
+        ( ${#storage_credentials} -gt 0 ) &&
+        ( ${#storage_passphrase} -gt 0 )
+      ]]; then
+        credentials="$(
+          echo -e "${storage_credentials}" | base64 -d | dos2unix
+        )" ;
+        passphrase="$(
+          echo -e "${storage_passphrase}" | base64 -d | dos2unix
+        )" ;
+        parameters="$(
+          echo -e "${input_parameters}" | base64 -d | dos2unix
+        )" ;
+        if [[ ( ${#credentials} -gt 0 ) && ( ${#passphrase} -gt 0 ) ]]; then
+          if [[ ${system_platform} == 'ubuntu' ]]; then
+            if [[ ${parameters} =~ '--enable sharepoint' ]]; then
+              export SharePoint_DevNetOpsEngineers_Credentials="${credentials}" ;
+              export SharePoint_DevNetOpsEngineers_Passphrase="${passphrase}" ;
+            fi ;
+          fi ;
+        fi ;
+      fi ;
+      # rm -fv ${workspace}/core/.git.zip 2>&1>/dev/null ;
+      sudo chmod -R g+w ${workspace}
+      # tree ${workspace} ;
+      if [[ "${verbose}" != 'false' ]]; then
+        echo -e "Initializing Project Configuration" ;
+      fi ;
+      python ${workspace}/project.py --params --json ;
+      if [[ "${verbose}" != 'false' ]]; then
+        echo -e "Listing Storage Configurations" ;
+        cat ${workspace}/sharepoint.json ;
+      fi ;
+      [[ "${verbose}" != 'false' ]] && {
+        echo -e "\nDeploying Application Pipeline:" ;
+        echo -e python ${workspace}/project.py --params ${parameters} ;
+      } ;
+      python ${workspace}/project.py --params ${parameters} ;
+    fi ;
+    return 0;
+  }; alias application-deployment='application_deployment' ;
+
+declare -a params=("${@}") ;
+# echo -e "\nParams: ${params[*]}" ;
+unset params[0] params[1]
+
+script="${1}" ;
+action="${2}" ;
+
+case "${script}" in
+  'application-parameters' )
+    eval "application_parameters --action=${action} ${params[*]}" ;
+  ;;
+  'application-deployment' )
+    eval "application_deployment --action=${action} ${params[*]}" ;
+  ;;
+  * ) echo -e "Skiping: ${@}" ;;
+esac ;

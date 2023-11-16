@@ -1,7 +1,6 @@
-## This workflow will install Python dependencies, run tests and lint with a single version of Python
-## For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
 name: Git Worktree Automation
+run-name: ${{ github.actor }} -> Git Worktree Automation
 on:
 
 ####----------------------------------------------------------------------------
@@ -17,21 +16,6 @@ on:
         description: 'Updating the Operating System State'
         required: false
         default: false
-    
-      upgrade-system:
-        description: 'Upgrading the Operating System State'
-        required: false
-        default: false
-    
-      # python-version:
-      #   description: 'Defines target Python Version'
-      #   required: true
-      #   default: '3.11'
-    
-      # update-pip-version:
-      #   description: 'Updating the current PIP Version'
-      #   required: true
-      #   default: false
     
       install-default-tools:
         description: 'Installing Default Toolset (DevOps)'
@@ -68,18 +52,10 @@ on:
         required: false
         default: false
 
-      # debuger-mode:
-      #   description: 'Enabling Shell Debugger'
-      #   required: false
-      #   default: false
-    
       # logLevel:
       #   description: 'Log level'
       #   required: false
       #   default: 'warning'
-
-      # tags:
-      #   description: 'Evaluate Project Readiness'
 
 ####----------------------------------------------------------------------------
 
@@ -127,8 +103,8 @@ env:
   ## Secrets: ------------------------------------------------------------------
 
   ## SharePoint Credentials & Passphrase
-  SHAREPOINT_CREDENTIALS: "${{ secrets.SHAREPOINT_CREDENTIALS }}"
-  SHAREPOINT_PASSPHRASE:  "${{ secrets.SHAREPOINT_PASSPHRASE }}"
+  STORAGE_CREDENTIALS: "${{ secrets.STORAGE_CREDENTIALS }}"
+  STORAGE_PASSPHRASE:  "${{ secrets.STORAGE_PASSPHRASE }}"
 
 ####----------------------------------------------------------------------------
 
@@ -137,7 +113,7 @@ permissions:
 
 jobs:
 
-  evaluate-readiness:
+  deployment-pipeline:
 
     runs-on: ubuntu-latest
 
@@ -183,23 +159,19 @@ jobs:
 ## System Deployment
 
       - name: System Deployment
-        uses: ./
+        uses: ./.github/actions/project
         id: system-deployment
         with:
 
           update-system:  ${UPDATE_SYSTEM}
-          upgrade-system: ${UPGRADE_SYSTEM}
-
-          # update-python-version: ${UPDATE_PYTHON}
-          # update-pip-version:    ${UPDATE_PIP}
 
           install-default-tools: ${DEFAULT_TOOLS}
           install-custom-tools:  ${CUSTOM_TOOLS}
 
           install-python-requirements: ${PYTHON_REQUIREMENTS}
 
-          storage-credentials: ${SHAREPOINT_CREDENTIALS}
-          storage-passphrase:  ${SHAREPOINT_PASSPHRASE}
+          storage-credentials: ${STORAGE_CREDENTIALS}
+          storage-passphrase:  ${STORAGE_PASSPHRASE}
 
           application-parameters: ${APPLICATION_PARAMETERS}
 
@@ -273,9 +245,9 @@ jobs:
         continue-on-error: false
 
 ####----------------------------------------------------------------------------
-## Python -> Evaluate Testing
+## Python -> Project Testing
 
-      - name: PyTest -> Evaluate Testing
+      - name: PyTest -> Project Testing
         shell: bash
         run: |
           python -m pytest ${{ matrix.pytest-scripts }} --verbose ;
@@ -283,9 +255,9 @@ jobs:
         continue-on-error: false
 
 ####----------------------------------------------------------------------------
-## Coverage -> Evaluate Testing
+## Coverage -> Project Testing
 
-      - name: Coverage -> Evaluate Testing
+      - name: Coverage -> Project Testing
         shell: bash
         run: |
           coverage run -m pytest ${{ matrix.pytest-scripts }} ;
@@ -293,9 +265,9 @@ jobs:
         continue-on-error: false
 
 ####----------------------------------------------------------------------------
-## Coverage -> Evaluate Report
+## Coverage -> Project Report
 
-      - name: Coverage -> Evaluate Report
+      - name: Coverage -> Project Report
         shell: bash
         run: |
           coverage report | grep -v ${{ matrix.coverage-exclude }} ;

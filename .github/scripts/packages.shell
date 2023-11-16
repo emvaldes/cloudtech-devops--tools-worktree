@@ -1,0 +1,91 @@
+#!/usr/bin/env bash
+
+####----------------------------------------------------------------------
+function install_packages () {
+    oIFS="${IFS}" ;
+    for xitem in "${@}"; do
+      IFS='='; set `echo -e "${xitem}" | sed -e '1s|^\(-\)\{1,\}||'`
+      [[ ${1#*\--} = "action" ]] && export install_toolset="${2}" ;
+      [[ ${1#*\--} = "default" ]] && export default_toolset="${2}" ;
+      [[ ${1#*\--} = "custom" ]] && export custom_toolset="${2}" ;
+      [[ ${1#*\--} = "platform" ]] && export system_platform="${2}" ;
+      [[ ${1#*\--} = "verbose" ]] && {
+        export verbose='true' ;
+        set -x ;
+      };
+    done; IFS="${oIFS}";
+    #### -----------------------------------------------------------------
+    [[ ${#install_toolset} -eq 0 ]] && export install_toolset='false' ;
+    [[ ${#default_toolset} -eq 0 ]] && export default_toolset='false' ;
+    [[ ${#custom_toolset} -eq 0 ]] && export custom_toolset='false' ;
+    [[ ${#system_platform} -eq 0 ]] && export system_platform='false' ;
+    [[ ${#verbose} -eq 0 ]] && export verbose='false' ;
+    #### -----------------------------------------------------------------
+    if [[ ${install_toolset} == true ]]; then
+      if [[ "${default_toolset}" != 'false' ]]; then
+        local message="Installing Toolset" ;
+        local packages_listing="/tmp/packages.list" ;
+        declare -a default_packages="$(
+          echo -e "${default_toolset}" | base64 -d | dos2unix \
+             | tr '\n' ' ' | sed -e 's|^\(.*\)$| \1 |g' -e 's| false ||g'
+        )" ;
+        declare -a custom_packages="$(
+          echo -e "${custom_toolset}" | base64 -d | dos2unix \
+             | tr '\n' ' ' | sed -e 's|^\(.*\)$| \1 |g' -e 's| false ||g'
+        )" ;
+        declare -a packages=( "${default_packages} ${custom_packages}" ) ;
+        local valid_packages="$(
+          echo -e "${packages[*]}" \
+             | sed -e 's|\([[:blank:]]\)\{1,\}| |g'
+        )" ;
+        if [[
+              ( "${#packages[@]}" -gt 0 ) && 
+              ( "${valid_packages}" != 'false' ) 
+            ]]; then
+                echo -e ${packages[@]} \
+                    | tr '[[:blank:]]\,\;' '\n' \
+                    | sed '/^$/d' \
+                    | sort -n | uniq - \
+                    | dos2unix \
+                > "${packages_listing}" ;
+                if [ -f "${packages_listing}" ]; then
+                        echo -e "\nPackages:\n\n$(
+                          cat "${packages_listing}" | sed '/^$/d'
+                        )" ;
+                        local total_entries=$(
+                          wc -w "${packages_listing}" | awk '{print $1}'
+                        ) ;
+                        if [[ ${total_entries} -gt 0 ]]; then
+                                declare -a packages=($(
+                                  cat "${packages_listing}"
+                                )) ;
+                                if [[ ${system_platform} == 'ubuntu' ]]; then
+                                  for package in ${packages[@]}; do
+                                    sudo apt-get install --yes ${package} 1>/dev/null;
+                                    apt info ${package} ;
+                                  done ;
+                                fi ;
+                          else  echo -e "Warning: "${packages_listing}" is empty! " ;
+                        fi ;
+                  else  echo -e "Warning: "${packages_listing}" was not found! " ;
+                fi ;
+          else  echo -e "\nSkip: ${message}! " ;
+        fi ;
+      fi ;
+    fi ;
+    return 0;
+  }; alias install-packages='install_packages' ;
+
+declare -a params=("${@}") ;
+# echo -e "\nParams: ${params[*]}" ;
+unset params[0] params[1]
+
+script="${1}" ;
+action="${2}" ;
+
+case "${script}" in
+  'install-packages' )
+    eval "install_packages --action=${action} ${params[*]}" ;
+  ;;
+  * ) echo -e "Skiping: ${@}" ;;
+esac ;

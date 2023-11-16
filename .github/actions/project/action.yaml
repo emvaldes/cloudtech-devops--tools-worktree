@@ -1,0 +1,224 @@
+name: System Requirements
+description: 'System Requirements (DevOps)'
+
+####----------------------------------------------------------------------------
+
+inputs:
+
+  update-system:
+    description: 'Updating the Operating System State'
+    required: false
+    default: 'false'
+
+  install-default-tools:
+    description: 'Installing Default Toolset (DevOps)'
+    required: false
+    default: 'false'
+
+  install-custom-tools:
+    description: 'Installing Custom Toolset (DevOps)'
+    required: false
+    default: 'false'
+
+  install-python-requirements:
+    description: 'Installing Python Requirements'
+    required: false
+    default: 'false'
+
+  storage-credentials:
+    description: 'Pipeline Storage Credentials'
+    required: false
+    default: 'false'
+
+  storage-passphrase:
+    description: 'Pipeline Storage Passphrase'
+    required: false
+    default: 'false'
+
+  application-parameters:
+    description: 'Pipeline Application Parameters'
+    required: false
+    default: 'false'
+
+  verbose-mode:
+    description: 'Enabling Verbosity'
+    required: false
+    default: 'false'
+
+####----------------------------------------------------------------------
+## outputs:
+####----------------------------------------------------------------------
+
+runs:
+
+  using: "composite"
+  steps:
+
+    ####------------------------------------------------------------------
+    - name: System Release
+      id: system-release
+      shell: bash
+      run: |
+
+        [[ "${{ inputs.verbose-mode }}" != 'false' ]] && { set -x ; } ;
+        echo -e "System Platform: ${{ env.SYSTEM_PLATFORM }}" ;
+
+        echo -e ;
+
+        cat /etc/os-release ;
+        export system_platform="$(
+            cat /etc/os-release \
+              | egrep '^NAME=".*$' \
+              | sed -e 's|"||g' -e 's|^NAME=||' \
+              | tr '[[:upper:]]' '[[:lower:]]'
+          )" ;
+        echo "SYSTEM_PLATFORM=${system_platform}" >> $GITHUB_ENV ;
+        echo -e ;
+        if [[ ${system_platform} == 'ubuntu' ]]; then
+            echo -en "Installing LSB Release ... " ;
+            sudo apt-get install --yes lsb-release 1>/dev/null ;
+            echo -e "done." ;
+            echo -en "Installing Dos2Unix ... " ;
+            sudo apt-get install --yes dos2unix 1>/dev/null ;
+            echo -e "done." ;
+        fi;
+        echo -e ;
+
+    ####------------------------------------------------------------------
+    - name: Updating Operating System
+      id: updating-operating-system
+      shell: bash
+      run: |
+
+        ${GITHUB_WORKSPACE}/.github/scripts/system.shell \
+                            update-system "${{ inputs.update-system }}" \
+                            --platform="${{ env.SYSTEM_PLATFORM }}" \
+                            --verbose="${{ inputs.verbose-mode }}" \
+                            2>/dev/null ;
+
+    ####------------------------------------------------------------------
+    - name: Linking Python (Latest)
+      id: linking-python3
+      shell: bash
+      run: |
+
+        ${GITHUB_WORKSPACE}/.github/scripts/software.shell \
+                            activate-python3 true \
+                            --platform="${{ env.SYSTEM_PLATFORM }}" \
+                            --verbose="${{ inputs.verbose-mode }}" \
+                            2>/dev/null ;
+
+    ####------------------------------------------------------------------
+    - name: Python PIP3 (Latest)
+      id: python-pip3
+      shell: bash
+      run: |
+
+        ${GITHUB_WORKSPACE}/.github/scripts/software.shell \
+                            python-pip3 true \
+                            --platform="${{ env.SYSTEM_PLATFORM }}" \
+                            --verbose="${{ inputs.verbose-mode }}" \
+                            2>/dev/null ;
+
+    ####------------------------------------------------------------------
+    - name: Python Requirements
+      id: python-requirements
+      shell: bash
+      run: |
+
+        ${GITHUB_WORKSPACE}/.github/scripts/software.shell \
+                            python-requirements true \
+                            --requirements="$(
+                              echo "${{ inputs.install-python-requirements }}" \
+                                 | base64 -w 0
+                            )" \
+                            --platform="${{ env.SYSTEM_PLATFORM }}" \
+                            --verbose="${{ inputs.verbose-mode }}" \
+                            2>/dev/null ;
+
+    ####------------------------------------------------------------------
+    - name: Installing Packages
+      id: installing-packages
+      shell: bash
+      run: |
+
+        ${GITHUB_WORKSPACE}/.github/scripts/packages.shell \
+                            install-packages true \
+                            --default="$(
+                              echo "${{ inputs.install-default-tools }}" \
+                                 | base64 -w 0
+                            )" \
+                            --custom="$(
+                              echo "${{ inputs.install-custom-tools }}" \
+                                 | base64 -w 0
+                            )" \
+                            --platform="${{ env.SYSTEM_PLATFORM }}" \
+                            --verbose="${{ inputs.verbose-mode }}" \
+                            2>/dev/null ;
+
+    ####------------------------------------------------------------------
+    - name: Application Parameters
+      id: application-parameters
+      shell: bash
+      run: |
+
+        export INPUT_PARAMETERS="$(
+          ${GITHUB_WORKSPACE}/.github/scripts/project.shell \
+                            application-parameters true \
+                            --parameters="$(
+                              echo "${{ env.APPLICATION_PARAMETERS }}" \
+                                 | base64 -w 0
+                            )" \
+                            --platform="${{ env.SYSTEM_PLATFORM }}" \
+                            --verbose="${{ inputs.verbose-mode }}" \
+                            2>/dev/null
+        )";
+        echo -e "Parameters: ${INPUT_PARAMETERS}" ;
+        echo "INPUT_PARAMETERS=${INPUT_PARAMETERS}" >> $GITHUB_ENV ;
+
+    ####------------------------------------------------------------------
+    - name: Application Deployment
+      id: application-deployment
+      shell: bash
+      run: |
+
+        ${GITHUB_WORKSPACE}/.github/scripts/project.shell \
+                            application-deployment true \
+                            --credentials="$(
+                              echo "${{ env.STORAGE_CREDENTIALS }}" \
+                                 | base64 -w 0
+                            )" \
+                            --passphrase="$(
+                              echo "${{ env.STORAGE_PASSPHRASE }}" \
+                                 | base64 -w 0
+                            )" \
+                            --parameters="$(
+                              echo "${{ env.INPUT_PARAMETERS }}" \
+                                 | base64 -w 0
+                            )" \
+                            --workspace="${GITHUB_WORKSPACE}" \
+                            --platform="${{ env.SYSTEM_PLATFORM }}" \
+                            --verbose="${{ inputs.verbose-mode }}" \
+                            2>/dev/null ;
+
+        ## Listing Worktrees (create, local, etc.) ...
+        echo -e "Project Worktrees:" ;
+        tree -a ${GITHUB_WORKSPACE}/.worktrees ;
+
+        echo -e ;
+        echo -e "Project Worktree List:" ;
+        git worktree list ;
+        echo -e ;
+
+    ####------------------------------------------------------------------
+    - name: Display System Environment
+      id: system-environment
+      shell: bash
+      run: |
+
+        ${GITHUB_WORKSPACE}/.github/scripts/system.shell \
+                            system-environment "${{ env.VERBOSE_MODE }}" \
+                            --verbose="${{ inputs.verbose-mode }}" \
+                            2>/dev/null ;
+
+####----------------------------------------------------------------------

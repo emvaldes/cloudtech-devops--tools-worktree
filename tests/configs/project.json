@@ -191,15 +191,15 @@
                                     "type": "json",
                                     "size": "4.8 kB",
                                     "hash": "6e61b3bf7d4a9cd5d9116e90d18c2bf6",
-                                    "date": "2023-11-12 17:33:56.418799"
+                                    "date": "2023-11-15 19:41:15.712378"
                                 },
                                 {
                                     "id": "project",
                                     "name": "project",
                                     "type": "json",
-                                    "size": "28.7 kB",
-                                    "hash": "93fca8f9c93a9fe06b906774cb4bd62e",
-                                    "date": "2023-11-12 17:33:56.419989"
+                                    "size": "28.4 kB",
+                                    "hash": "00dc89ef2dc3d2aff4378e8d85bc0c72",
+                                    "date": "2023-11-15 19:41:15.713610"
                                 }
                             ]
                         }
@@ -232,14 +232,6 @@
                     "size": "21.3 kB",
                     "hash": "bf93a09b158e1d18c2362685eff44c99",
                     "date": "2023-11-12 15:04:49.406469"
-                },
-                {
-                    "id": "action",
-                    "name": "action",
-                    "type": "yaml",
-                    "size": "16.6 kB",
-                    "hash": "db3dbd99664f48676ebafcfc38169a45",
-                    "date": "2023-11-12 15:04:34.692733"
                 },
                 {
                     "id": "project",
@@ -672,7 +664,7 @@
         },
         "input": {
             "args": {
-                "create": false,
+                "create": true,
                 "destroy": false,
                 "display": [
                     "config"
@@ -685,17 +677,17 @@
                 "format": false,
                 "git_repo": false,
                 "include": false,
-                "local": false,
+                "local": true,
                 "password": false,
                 "reload": false,
                 "remove": false,
                 "upload": [],
                 "worktree": ".worktrees",
-                "json": false,
-                "params": false,
+                "json": true,
+                "params": true,
                 "version": false,
                 "verbose": true,
-                "debug": false,
+                "debug": true,
                 "help": false,
                 "info": false,
                 "examples": false,
