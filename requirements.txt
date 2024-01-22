@@ -6,7 +6,7 @@ freezegun==1.2.2
 humanize==4.8.0
 maskpass==0.3.7
 openpyxl==3.1.2
-pandas==2.1.1
+pandas==2.2.0
 progress==1.6
 pylint==3.0.2
 pytest-cov==4.1.0
