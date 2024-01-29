@@ -1,7 +1,7 @@
 GitPython==3.1.40
 PyYAML==6.0.1
 coverage-badge==1.1.0
-cryptography==41.0.5
+cryptography==42.0.1
 freezegun==1.2.2
 humanize==4.8.0
 maskpass==0.3.7
