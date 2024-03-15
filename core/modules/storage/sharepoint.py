@@ -166,6 +166,31 @@ class SharePoint:
         self.export_profile()
 
     ## ------------------------------------------
+    def configure_environment( self ) -> None:
+        """
+        Objective:  Configure Environment
+        Parameters: None
+        Returns:    None
+        """
+
+        toolset.trace_workflow( inspect.currentframe() )
+
+        self.sharepoint["config"] = "sharepoint.json"
+        ## Addressing duplicity in path configuration
+        self.sharepoint["filepath"] = os.path.join(
+            self.trg_path,
+            self.sharepoint["config"]
+        )
+
+        ## Configure Microsoft Graph & Domain
+        self.graph["domain"] = r"https://graph.microsoft.com"
+        self.graph["version"] = rf"{ self.graph['domain'] }/v1.0"
+        self.graph["sites"] = rf"{ self.graph['version'] }/sites"
+        self.login = r"https://login.microsoftonline.com"
+
+        # return None
+
+    ## ------------------------------------------
     def archive_item(
             self,
             target_item: dict = None
@@ -229,31 +254,6 @@ class SharePoint:
                     )
 
         return True
-
-    ## ------------------------------------------
-    def configure_environment( self ) -> None:
-        """
-        Objective:  Configure Environment
-        Parameters: None
-        Returns:    None
-        """
-
-        toolset.trace_workflow( inspect.currentframe() )
-
-        self.sharepoint["config"] = "sharepoint.json"
-        ## Addressing duplicity in path configuration
-        self.sharepoint["filepath"] = os.path.join(
-            self.trg_path,
-            self.sharepoint["config"]
-        )
-
-        ## Configure Microsoft Graph & Domain
-        self.graph["domain"] = r"https://graph.microsoft.com"
-        self.graph["version"] = rf"{ self.graph['domain'] }/v1.0"
-        self.graph["sites"] = rf"{ self.graph['version'] }/sites"
-        self.login = r"https://login.microsoftonline.com"
-
-        # return None
 
     ## ------------------------------------------
     def configure_profile( self ) -> bool:
