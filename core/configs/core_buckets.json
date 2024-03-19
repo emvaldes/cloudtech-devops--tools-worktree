@@ -16,7 +16,29 @@
                                 "id": "html",
                                 "name": "html",
                                 "size": "0 bytes",
-                                "dirs": [],
+                                "dirs": [
+                                    {
+                                        "id": "app_mods",
+                                        "name": "app_mods",
+                                        "size": "0 bytes",
+                                        "dirs": [],
+                                        "files": []
+                                    },
+                                    {
+                                        "id": "core_mods",
+                                        "name": "core_mods",
+                                        "size": "0 bytes",
+                                        "dirs": [],
+                                        "files": []
+                                    },
+                                    {
+                                        "id": "tests_mods",
+                                        "name": "tests_mods",
+                                        "size": "0 bytes",
+                                        "dirs": [],
+                                        "files": []
+                                    }
+                                ],
                                 "files": []
                             },
                             {
@@ -49,7 +71,7 @@
                                         "hash": "",
                                         "date": "0"
                                     }
-                        
+
                                 ]
                             }
                         ],
@@ -75,25 +97,148 @@
                                 "size": "0 bytes",
                                 "dirs": [
                                     {
-                                        "id": "core",
-                                        "name": "core",
-                                        "size": "0 bytes",
-                                        "dirs": [],
-                                        "files": []
-                                    },
-                                    {
                                         "id": "app",
                                         "name": "app",
                                         "size": "0 bytes",
                                         "dirs": [],
-                                        "files": []
+                                        "files": [
+                                            {
+                                                "id": "mod_classes",
+                                                "name": "mod_classes",
+                                                "type": "log",
+                                                "size": "0 bytes",
+                                                "hash": "",
+                                                "date": "0"
+                                            },
+                                            {
+                                                "id": "mod_project",
+                                                "name": "mod_project",
+                                                "type": "log",
+                                                "size": "0 bytes",
+                                                "hash": "",
+                                                "date": "0"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "core",
+                                        "name": "core",
+                                        "size": "0 bytes",
+                                        "dirs": [],
+                                        "files": [
+                                            {
+                                                "id": "app_class",
+                                                "name": "app_class",
+                                                "type": "log",
+                                                "size": "0 bytes",
+                                                "hash": "",
+                                                "date": "0"
+                                            },
+                                            {
+                                                "id": "bucket_class",
+                                                "name": "bucket_class",
+                                                "type": "log",
+                                                "size": "0 bytes",
+                                                "hash": "",
+                                                "date": "0"
+                                            },
+                                            {
+                                                "id": "config_class",
+                                                "name": "config_class",
+                                                "type": "log",
+                                                "size": "0 bytes",
+                                                "hash": "",
+                                                "date": "0"
+                                            },
+                                            {
+                                                "id": "core_class",
+                                                "name": "core_class",
+                                                "type": "log",
+                                                "size": "0 bytes",
+                                                "hash": "",
+                                                "date": "0"
+                                            },
+                                            {
+                                                "id": "core_module",
+                                                "name": "core_module",
+                                                "type": "log",
+                                                "size": "0 bytes",
+                                                "hash": "",
+                                                "date": "0"
+                                            },
+                                            {
+                                                "id": "core_parser",
+                                                "name": "core_parser",
+                                                "type": "log",
+                                                "size": "0 bytes",
+                                                "hash": "",
+                                                "date": "0"
+                                            },
+                                            {
+                                                "id": "core_toolset",
+                                                "name": "core_toolset",
+                                                "type": "log",
+                                                "size": "0 bytes",
+                                                "hash": "",
+                                                "date": "0"
+                                            },
+                                            {
+                                                "id": "helper_class",
+                                                "name": "helper_class",
+                                                "type": "log",
+                                                "size": "0 bytes",
+                                                "hash": "",
+                                                "date": "0"
+                                            },
+                                            {
+                                                "id": "json_class",
+                                                "name": "json_class",
+                                                "type": "log",
+                                                "size": "0 bytes",
+                                                "hash": "",
+                                                "date": "0"
+                                            },
+                                            {
+                                                "id": "sharepoint",
+                                                "name": "sharepoint",
+                                                "type": "log",
+                                                "size": "0 bytes",
+                                                "hash": "",
+                                                "date": "0"
+                                            }
+                                        ]
                                     },
                                     {
                                         "id": "tests",
                                         "name": "tests",
                                         "size": "0 bytes",
                                         "dirs": [],
-                                        "files": []
+                                        "files": [
+                                            {
+                                                "id": "conftest",
+                                                "name": "conftest",
+                                                "type": "log",
+                                                "size": "0 bytes",
+                                                "hash": "",
+                                                "date": "0"
+                                            },
+                                            {
+                                                "id": "test__core_module",
+                                                "name": "test__core_module",
+                                                "type": "log",
+                                                "size": "0 bytes",
+                                                "hash": "",
+                                                "date": "0"
+                                            },
+                                            {
+                                                "id": "test__mod_project",
+                                                "name": "test__mod_project",
+                                                "type": "log",
+                                                "size": "0 bytes",
+                                                "hash": "",
+                                                "date": "0"
+                                            }
+                                        ]
                                     }
                                 ],
                                 "files": []
@@ -111,7 +256,32 @@
                                 "name": "pytest",
                                 "size": "0 bytes",
                                 "dirs": [],
-                                "files": []
+                                "files": [
+                                    {
+                                        "id": "conftest",
+                                        "name": "conftest",
+                                        "type": "log",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "test__core_module",
+                                        "name": "test__core_module",
+                                        "type": "log",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "test__mod_project",
+                                        "name": "test__mod_project",
+                                        "type": "log",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    }
+                                ]
                             }
                         ],
                         "files": []
@@ -122,25 +292,148 @@
                         "size": "0 bytes",
                         "dirs": [
                             {
-                                "id": "core",
-                                "name": "core",
-                                "size": "0 bytes",
-                                "dirs": [],
-                                "files": []
-                            },
-                            {
                                 "id": "app",
                                 "name": "app",
                                 "size": "0 bytes",
                                 "dirs": [],
-                                "files": []
+                                "files": [
+                                    {
+                                        "id": "mod_classes",
+                                        "name": "mod_classes",
+                                        "type": "md",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "mod_project",
+                                        "name": "mod_project",
+                                        "type": "md",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "core",
+                                "name": "core",
+                                "size": "0 bytes",
+                                "dirs": [],
+                                "files": [
+                                    {
+                                        "id": "app_class",
+                                        "name": "app_class",
+                                        "type": "md",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "bucket_class",
+                                        "name": "bucket_class",
+                                        "type": "md",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "config_class",
+                                        "name": "config_class",
+                                        "type": "md",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "core_class",
+                                        "name": "core_class",
+                                        "type": "md",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "core_module",
+                                        "name": "core_module",
+                                        "type": "md",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "core_parser",
+                                        "name": "core_parser",
+                                        "type": "md",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "core_toolset",
+                                        "name": "core_toolset",
+                                        "type": "md",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "helper_class",
+                                        "name": "helper_class",
+                                        "type": "md",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "json_class",
+                                        "name": "json_class",
+                                        "type": "md",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "sharepoint",
+                                        "name": "sharepoint",
+                                        "type": "md",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    }
+                                ]
                             },
                             {
                                 "id": "tests",
                                 "name": "tests",
                                 "size": "0 bytes",
                                 "dirs": [],
-                                "files": []
+                                "files": [
+                                    {
+                                        "id": "conftest",
+                                        "name": "conftest",
+                                        "type": "md",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "test__core_module",
+                                        "name": "test__core_module",
+                                        "type": "md",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "test__mod_project",
+                                        "name": "test__mod_project",
+                                        "type": "md",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    }
+                                ]
                             }
                         ],
                         "files": []
