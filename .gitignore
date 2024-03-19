@@ -11,6 +11,9 @@
 data/
 logs/
 
+## Exclude dynamically updated configurations
+tests/configs/*.json
+
 ## Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
