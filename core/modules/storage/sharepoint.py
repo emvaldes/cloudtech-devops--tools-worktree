@@ -35,7 +35,7 @@ class SharePoint:
 
     __empty__ = ''
     __space__ = ' '
-    __tab__ = '\t'
+    __tab__ = '    '
 
     trg_path = None
     args = None
@@ -205,7 +205,7 @@ class SharePoint:
         toolset.trace_workflow( inspect.currentframe() )
 
         file_name, file_type = os.path.splitext(
-            target_item["target"]
+            target_item["remote"]
         )
 
         # ## Configure SharePoint Already-Archive
@@ -215,7 +215,7 @@ class SharePoint:
         # )
 
         for exported in self.already["exported"]:
-            if exported["target"] == target_item["target"]:
+            if exported["remote"] == target_item["remote"]:
                 target_item = exported
                 listing = []
                 for archived in self.already["archived"]:
@@ -236,7 +236,7 @@ class SharePoint:
                     )
                 else:
                     archive_filename = "".join([
-                        f"{ file_name }" + 
+                        f"{ file_name }" +
                         f"-{ toolset.datestamp }-000" +
                         f"{ file_type }"
                     ])
@@ -303,9 +303,9 @@ class SharePoint:
         #     )
 
         file_url = (
-            rf"{ self.graph['sites'] }/" + 
-            rf"{ self.profile['credentials']['site_id'] }/drives/" + 
-            rf"{ self.profile['credentials']['drive_id'] }/items/" + 
+            rf"{ self.graph['sites'] }/" +
+            rf"{ self.profile['credentials']['site_id'] }/drives/" +
+            rf"{ self.profile['credentials']['drive_id'] }/items/" +
             rf"{ source_item }/copy"
         )
         # if self.args.debug:
@@ -606,45 +606,36 @@ class SharePoint:
 
         toolset.trace_workflow( inspect.currentframe() )
 
-        # if self.args.debug:
-        #     toolset.display_message(
-        #         message = "Download SharePoint Files"
-        #     )
-
         downloads = []
-        # source_files = self.locations["import"]["files"]
-        source_files = self.select_files()
         if self.args.download is not None:
-            if self.args.verbose:
+            # source_files = self.locations["import"]["files"]
+            source_files = self.select_files()
+            if source_files is not None:
                 toolset.display_message(
                     heading = None,
-                    message = "\nDownloading files:\n"
+                    message = "\nDownloading files:"
                 )
-                toolset.print_json( content = source_files )
-        # for source_file in source_files:
-        #     if self.args.debug:
-        #         toolset.display_message(
-        #             heading = None,
-        #             message = source_file
-        #         )
-        #     # else:
-        #     #     name = source_file["name"]
-        #     #     target = source_file["target"]
-        #     #     message = f"Downloading { name } as { target }"
-        #     #     toolset.display_message(
-        #     #         message = message
-        #     #     )
-        downloads.append(
-            self.fetch_content(
-                source_files
-            )
-        )
-        # toolset.display_message(
-        #     heading = None,
-        #     message = downloads
-        # )
+                if self.args.verbose:
+                    for source_file in self.locations["import"]["files"]:
+                        local_name = source_file["name"]
+                        remote_name = source_file["remote"]
+                        message = f"  { remote_name } -> { local_name }"
+                        toolset.display_message(
+                            message = message
+                        )
+                if self.args.debug:
+                    toolset.print_json( content = source_files )
+                downloads.append(
+                    self.fetch_content(
+                        source_files
+                    )
+                )
+                # toolset.display_message(
+                #     heading = None,
+                #     message = downloads
+                # )
 
-        return downloads
+                return downloads
 
     ## ------------------------------------------
     def export_profile( self ) -> bool:
@@ -749,7 +740,7 @@ class SharePoint:
             download_url = (
                 rf"{ self.graph['sites'] }/" +
                 rf"{ self.credentials['site_id'] }/drives/" +
-                rf"{ self.credentials['drive_id'] }/root:/" + 
+                rf"{ self.credentials['drive_id'] }/root:/" +
                 rf"{ self.importing['remote'] }/" +
                 rf"{ file_name['name'] }:/content"
             )
@@ -776,8 +767,8 @@ class SharePoint:
                     sys.exit( response.status_code )
             except requests.exceptions.RequestException as error:
                 toolset.display_warning( error )
-            # if file_name["target"] is not None:
-            #     target_file = file_name["target"]
+            # if file_name["remote"] is not None:
+            #     target_file = file_name["remote"]
             # else:
             #     target_file = file_name["name"]
             try:
@@ -977,9 +968,9 @@ class SharePoint:
                     if target_files is not None:
                         if self.importing["action"] == self.import_latest:
                             for file in target_files:
-                                if file["target"] in listed_file["name"]:
+                                if file["remote"] in listed_file["name"]:
                                     file_attributes["name"] = listed_file["name"]
-                                    file_attributes["target"] = file["target"]
+                                    file_attributes["remote"] = file["remote"]
                                     file_attributes["rename"] = file["name"]
                                     if file_attributes["type"] == "file":
                                         files_list.append( file_attributes )
@@ -1007,7 +998,11 @@ class SharePoint:
             toolset.display_warning( message = error )
             sys.exit( error )
 
-        return files_list, listed_files
+        unique_list = toolset.remove_duplicates( files_list, "id" )
+        # toolset.print_json( unique_list )
+        # toolset.print_json( listed_files )
+        # sys.exit()
+        return unique_list, listed_files
 
     ## ------------------------------------------
     def locations_token( self ) -> float:
@@ -1313,8 +1308,8 @@ class SharePoint:
         #         message = f"\nReport Path: { source_file['name'] }"
         #     )
 
-        if source_file["target"] is not None:
-            file_name = source_file["target"]
+        if source_file["remote"] is not None:
+            file_name = source_file["remote"]
 
         if self.exporting["action"] == "archive":
             ## Archiving SharePoint item
@@ -1482,7 +1477,7 @@ class SharePoint:
         # if self.args.debug:
         #         toolset.display_message(
         #         heading = None,
-        #         message = "Available Files: { files }"
+        #         message = f"Available Files: { files }"
         #     )
 
         if import_action != "latest":
@@ -1495,33 +1490,34 @@ class SharePoint:
         #     for file in self.locations['import']['files']:
         #         tools.display_message(
         #             heading = None,
-        #             message = f"\nListing Import File: { file['target'] }\n"
+        #             message = f"\nListing Import File: { file['remote'] }\n"
         #         )
         items = []
-        newest = []
-        latest = []
-        selected = []
-        for file_prefix in self.locations["import"]["files"]:
-            items.append( file_prefix["target"] )
+        for required in self.locations["import"]["files"]:
+            items.append( required["remote"] )
         # toolset.display_message(
         #     heading = None,
         #     message = f"Required Files: { items }"
         # )
-        for item_prefix in items:
+        listing = []
+        latest = []
+        resources = []
+        for item in items:
             # toolset.display_message(
             #     heading = None,
-            #     message = f"Filtered File: { item_prefix }"
+            #     message = f"Filtered File: { item }"
             # )
-            for item in files:
-                if item_prefix in item["name"]:
-                    selected.append( item )
-            for file in selected:
-                latest.append( file["time"] )
-                if file["time"] == max( latest ):
-                    newest_file = file
-            newest.append( newest_file )
-
-        return newest
+            for file in files:
+                if item in file["name"]:
+                    resources.append( file )
+            for resource in resources:
+                latest.append( resource["time"] )
+                if resource["time"] == max( latest ):
+                    newer_file = resource
+            listing.append( newer_file )
+        # toolset.print_json( resources )
+        if len( listing ) > 0:
+            return listing
 
     ## ------------------------------------------
     def upload_files( self ) -> bool:
@@ -1533,37 +1529,25 @@ class SharePoint:
 
         toolset.trace_workflow( inspect.currentframe() )
 
-        # if self.args.debug:
-        #     toolset.display_message(
-        #         message = "Uploading Local Files"
-        #     )
-
         uploads = []
         source_files = self.profile["locations"]["export"]["files"]
-        # toolset.display_message(
-        #     heading = None,
-        #     message = source_files
-        # )
+        # print( source_files )
         if self.args.upload is not None:
+            toolset.display_message(
+                heading = None,
+                message = "\nUploading files:"
+            )
             if self.args.verbose:
-                toolset.display_message(
-                    heading = None,
-                    message = "\nUploading files:\n"
-                )
+                for source_file in source_files:
+                    local_name = source_file["name"]
+                    remote_name = source_file["remote"]
+                    message = f"  { local_name } -> { remote_name }"
+                    toolset.display_message(
+                        message = message
+                    )
+            if self.args.debug:
                 toolset.print_json( content = source_files )
         for source_file in source_files:
-            # if self.args.debug:
-            #     toolset.display_message(
-            #         heading = None,
-            #         message = f"\nUpload File: { source_file }\n"
-            #     )
-            # else:
-            #     name = source_file["name"]
-            #     target = source_file["target"]
-            #     message = f"Uploading { name } as { target }"
-            #     toolset.display_message(
-            #         message = message
-            #     )
             response = self.publish_content(
                 source_file
             )

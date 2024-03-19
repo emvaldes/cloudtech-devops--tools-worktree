@@ -470,6 +470,29 @@ def print_json(
 
     return True
 
+## ------------------------------------------
+def remove_duplicates(
+        objects,
+        key
+    ) -> list:
+    """
+    Reference:  https://gist.github.com/amjad489/6fb307e2334432bffb73326c901c919b
+    Objective:  Removing Duplicates Items
+    Parameters:
+        objects => Object Listing
+        key => Filtering/Indexing Key
+    Returns:    List()
+    """
+    keys = []
+    for index, record in enumerate( objects ):
+        if objects[index] not in keys:
+            keys.append( index )
+    unique_list = []
+    for key in keys:
+        unique_list.append( objects[key] )
+
+    return unique_list
+
 ## ----------------------------------------------
 def script_logging(
         logs_path: str = os.getcwd(),

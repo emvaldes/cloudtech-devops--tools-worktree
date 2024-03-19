@@ -64,8 +64,12 @@
                 "remote": "Downloads",
                 "files": [
                     {
-                        "name": "template-downloads.json",
-                        "target": "template.json"
+                        "name": "template.json",
+                        "remote": "template-downloads.json"
+                    },
+                    {
+                        "name": "requirements.txt",
+                        "remote": "python-requirements.txt"
                     }
                 ],
                 "action": "latest"
@@ -77,11 +81,11 @@
                 "files": [
                     {
                         "name": "buckets.json",
-                        "target": "buckets-uploads.json"
+                        "remote": "buckets-uploads.json"
                     },
                     {
                         "name": "project.json",
-                        "target": "project-uploads.json"
+                        "remote": "project-uploads.json"
                     }
                 ],
                 "action": "archive"
