@@ -597,11 +597,11 @@ class SharePoint:
         return True
 
     ## ------------------------------------------
-    def download_files( self ) -> bool:
+    def download_files( self ) -> bool | list:
         """
         Objective:  Download SharePoint Files
         Parameters: None
-        Returns:    None
+        Returns:    True(bool) | List()
         """
 
         toolset.trace_workflow( inspect.currentframe() )
@@ -634,8 +634,9 @@ class SharePoint:
                 #     heading = None,
                 #     message = downloads
                 # )
-
                 return downloads
+        else:
+            return None
 
     ## ------------------------------------------
     def export_profile( self ) -> bool:
@@ -998,7 +999,7 @@ class SharePoint:
             toolset.display_warning( message = error )
             sys.exit( error )
 
-        unique_list = toolset.remove_duplicates( files_list, "id" )
+        unique_list = toolset.remove_duplicates( files_list )
         # toolset.print_json( unique_list )
         # toolset.print_json( listed_files )
         # sys.exit()
@@ -1520,11 +1521,11 @@ class SharePoint:
             return listing
 
     ## ------------------------------------------
-    def upload_files( self ) -> bool:
+    def upload_files( self ) -> list:
         """
         Objective:  Uploading Local Files
         Parameters: None
-        Returns:    None
+        Returns:    List
         """
 
         toolset.trace_workflow( inspect.currentframe() )

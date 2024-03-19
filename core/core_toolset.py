@@ -472,8 +472,7 @@ def print_json(
 
 ## ------------------------------------------
 def remove_duplicates(
-        objects,
-        key
+        objects: list = None
     ) -> list:
     """
     Reference:  https://gist.github.com/amjad489/6fb307e2334432bffb73326c901c919b
@@ -484,7 +483,7 @@ def remove_duplicates(
     Returns:    List()
     """
     keys = []
-    for index, record in enumerate( objects ):
+    for index, _ in enumerate( objects ):
         if objects[index] not in keys:
             keys.append( index )
     unique_list = []
