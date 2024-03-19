@@ -6,26 +6,6 @@ Git Worktree Workflows
 ---
 
 ```bash
-function print_revparse() {
-
-    echo -e "Absolute Dir: ${git_absolute_dir}";
-    echo -e "Git Common: ${git_common_dir}";
-    echo -e "Git Dir: ${git_dir}";
-    echo -e "Bare Repo: ${git_bare_repository}";
-    echo -e "Inside Git: ${git_inside_git_dir}";
-    echo -e "Inside Worktree: ${git_inside_work_tree}";
-    echo -e "Shallow Repository: ${git_shallow_repository}";
-    echo -e "Super-Project: ${git_superproject_path}";
-    echo -e "Top-Level: ${git_toplevel_path}";
-    echo -e "Parent: ${git_parent_path}";
-    echo -e "Project: ${git_project_path}";
-    echo -e "Remove Path: ${git_remove_path}";
-    return 0;
-
-  }; alias git-revparse='git_revparse';
-```
-
-```bash
 function export_revparse() {
 
     export git_absolute_dir="$( git rev-parse '--absolute-git-dir' )";
@@ -48,6 +28,26 @@ function export_revparse() {
       [[ ${#git_parent_path} -gt 0 ]] && echo -en "${git_superproject_path}" \
                                       | sed -e "s|${git_parent_path}||";
     )";
+    return 0;
+
+  }; alias git-revparse='git_revparse';
+```
+
+```bash
+function print_revparse() {
+
+    echo -e "Absolute Dir: ${git_absolute_dir}";
+    echo -e "Git Common: ${git_common_dir}";
+    echo -e "Git Dir: ${git_dir}";
+    echo -e "Bare Repo: ${git_bare_repository}";
+    echo -e "Inside Git: ${git_inside_git_dir}";
+    echo -e "Inside Worktree: ${git_inside_work_tree}";
+    echo -e "Shallow Repository: ${git_shallow_repository}";
+    echo -e "Super-Project: ${git_superproject_path}";
+    echo -e "Top-Level: ${git_toplevel_path}";
+    echo -e "Parent: ${git_parent_path}";
+    echo -e "Project: ${git_project_path}";
+    echo -e "Remove Path: ${git_remove_path}";
     return 0;
 
   }; alias git-revparse='git_revparse';
@@ -103,9 +103,9 @@ export SharePoint_DevNetOpsEngineers_Passphrase="<passphrase>"
 ```console
 $ worktree --help ;
 
-usage: worktree [--help] [--create] [--destroy] [--export [export ...]] [--format FORMAT] 
-                [--git-repo GIT_REPO] [--add INCLUDE] [--list] [--local] [--offline] [--reload] 
-                [--remove REMOVE] [--worktree WORKTREE] [--json] [--params] [--verbose] 
+usage: worktree [--help] [--create] [--destroy] [--export [export ...]] [--format FORMAT]
+                [--git-repo GIT_REPO] [--add INCLUDE] [--list] [--local] [--offline] [--reload]
+                [--remove REMOVE] [--worktree WORKTREE] [--json] [--params] [--verbose]
                 [--version] [--info] [--examples] [--wizard]
 
 Git Worktree Workflows
