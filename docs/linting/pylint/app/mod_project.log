@@ -1,5 +1,6 @@
 ************* Module app.mod_project
 app/mod_project.py:16: [R0915(too-many-statements), main] Too many statements (51/50)
 
-------------------------------------------------------------------
-Your code has been rated at 9.82/10 (previous run: 9.82/10, +0.00)
+----------------------------------------------------------------------------------------------------
+Your code has been rated at 9.82/10 (previous run: 10.00/10, -0.18)
+Checked 1 files, skipped 0 files

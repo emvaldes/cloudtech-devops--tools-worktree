@@ -68,10 +68,10 @@ def main(
             #     print( "\nProject -> Uploading files ..." )
             app.storage.upload_files()
 
-    _ = app_logging
     ## --------------------------------------
     # if app_logging is not None:
     #     app.options["logging"] = app_logging
+    _ = app_logging
 
     ## --------------------------------------
     ## Change Context -> Caller Location

@@ -11,6 +11,10 @@
 data/
 logs/
 
+## Ignoring modules folders
+core/
+tools/
+
 ## Exclude dynamically updated configurations
 tests/configs/*.json
 

@@ -41,7 +41,13 @@
                 },
                 "devops": []
             },
-            "readme": "README.md"
+            "readme": "README.md",
+            "repo": {
+                "url": "https://github.com/oneTakeda/netsrv-devops--tools-worktree.git",
+                "domain": "github.com",
+                "account": "oneTakeda",
+                "repo": "netsrv-devops--tools-worktree"
+            }
         },
         "package": {
             "name": "worktree",
@@ -50,7 +56,10 @@
                 "major": 0,
                 "minor": 1,
                 "patch": 0
-            }
+            },
+            "path": "",
+            "script": "project.py",
+            "configs": "conf"
         }
     },
     "storage": {

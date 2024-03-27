@@ -5,7 +5,7 @@ import inspect
 
 ## Import Core Classes:
 from core.classes.config_class import ConfigClass
-from core.modules.storage.sharepoint import SharePoint
+from core.modules.sharepoint.mssp_storage import SharePoint
 
 ## Import Core Modules:
 from core import core_module

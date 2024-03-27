@@ -1,7 +1,7 @@
 Name                 Stmts   Miss  Cover   Missing
 --------------------------------------------------
 app/__init__.py          0      0   100%
-app/mod_classes.py     204    204     0%   3-734
+app/mod_classes.py     204    204     0%   3-737
 app/mod_project.py      57     57     0%   4-144
 --------------------------------------------------
 TOTAL                  261    261     0%

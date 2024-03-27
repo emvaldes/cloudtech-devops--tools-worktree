@@ -105,7 +105,10 @@ class Worktree( AppConfig ):
 
         ## Configure Git Revparse (JsonObject)
         self.revparse = JsonObject(
-            toolset.configure_revparse()
+            toolset.configure_revparse(
+                repo = core_module.repo,
+                verbose = self.args.verbose
+            )
         )
 
         ## Discarding Protected and Pull Request Branches

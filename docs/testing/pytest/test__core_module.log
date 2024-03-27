@@ -1,8 +1,8 @@
 ============================= test session starts ==============================
-platform darwin -- Python 3.11.6, pytest-7.4.2, pluggy-1.2.0 -- /usr/local/opt/python@3.11/bin/python3.11
+platform darwin -- Python 3.12.2, pytest-8.1.1, pluggy-1.4.0 -- /usr/local/opt/python@3.12/bin/python3.12
 cachedir: .pytest_cache
-rootdir: /Users/emvaldes/.repos/devops/framework/worktree
-plugins: cov-4.1.0
+rootdir: /Users/emvaldes/.repos/devops/restapi/tools/worktree
+plugins: cov-5.0.0
 collecting ... collected 4 items
 
 tests/test__core_module.py::test__display_help PASSED                    [ 25%]
@@ -10,4 +10,4 @@ tests/test__core_module.py::test__user_input PASSED                      [ 50%]
 tests/test__core_module.py::test__load_script PASSED                     [ 75%]
 tests/test__core_module.py::test__module PASSED                          [100%]
 
-============================== 4 passed in 0.02s ===============================
+============================== 4 passed in 0.03s ===============================

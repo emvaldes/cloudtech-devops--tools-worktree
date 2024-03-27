@@ -10,7 +10,7 @@ FUNCTIONS
         Parameters:
             target_project (str): Target Project (default: os.getcwd())
         Returns:    project (str)
-    
+
     bucket_sizetype(bucket: str = None) -> int
         Objective:  Identify Size-Type
         Parameters:
@@ -22,7 +22,7 @@ FUNCTIONS
         Requirements:
             python -m pip install --upgrade humanize
             import humanize
-    
+
     configure_revparse(repo: Any = None, verbose: bool = False) -> dict
         Objective:  Configure Git Rev-Parse
         Parameters:
@@ -31,7 +31,7 @@ FUNCTIONS
         Returns:    revparse (dict)
         Reference:  https://git-scm.com/book/en/v2/
                     Git-Internals-Environment-Variables
-    
+
     display_message(heading: bool = False, message: str = '', newline=True) -> bool
         Objective:  Display custom (heading: message)
         Parameters:
@@ -39,13 +39,13 @@ FUNCTIONS
             message (str): Message body/content (default: empty string)
             newline (bool): Newline (default: True)
         Returns:    True (bool)
-    
+
     display_warning(message: str = None) -> bool
         Objective:  Display warning message
         Parameters:
             message (str): Message body/content (default: empty string)
         Returns:    True (bool)
-    
+
     execute_command(command: list = None, message: str = 'Unable to execute shell command!', verbose: bool = False) -> Any
         Objective:  Execute Shell Command
         Parameters:
@@ -53,7 +53,7 @@ FUNCTIONS
             message => Error Message (str)
             verbose => Display Shell Command (bool)
         Returns:    output (str)
-    
+
     fetch_revparse(command: str = None, verbose: bool = False) -> list | bool
         Objective:  Executing System Process
         Parameters:
@@ -61,13 +61,13 @@ FUNCTIONS
             verbose (bool): Display Git Rev-Parse (default: False)
         Returns:    revparse (list)
         Reference:  https://git-scm.com/docs/git-rev-parse
-    
+
     get_filestat(srcfile: str = None) -> str
         Objective:  Extracting File Statistics
         Parameters:
             srcfile (str): Source File (default: None)
         Returns:    report (str)
-    
+
     logging_content(output: str = None, options: dict = None, verbose: bool = True) -> bool
         Objective:  Logging Application Content
         Parameters:
@@ -75,7 +75,7 @@ FUNCTIONS
             options => Logging Options (dict)
             verbose => Display Output Content (bool)
         Returns:    None
-    
+
     name_iterator(location: str = os.getcwd(), file_name: str = 'file', file_type: str = '', indexing: bool = True) -> str
         Objective: Ensure unique file naming
         Parameters:
@@ -84,13 +84,21 @@ FUNCTIONS
             file_type (str): File type (default: '')
             indexing (bool): Indexing (default: True)
         Returns: string
-    
+
     print_json(content: dict = None) -> bool
         Objective:  Displaying JSON Content
         Parameters:
             content (dict): JSON Content (default: None)
         Returns:    None
-    
+
+    remove_duplicates(objects: list = None) -> list
+        Reference:  https://gist.github.com/amjad489/6fb307e2334432bffb73326c901c919b
+        Objective:  Removing Duplicates Items
+        Parameters:
+            objects => Object Listing
+            key => Filtering/Indexing Key
+        Returns:    List()
+
     script_logging(logs_path: str = os.getcwd(), logs_name: str = 'logs', container: str = '', file_name: str = '', gvar_item: str = '__tracer__') -> bool
         Objective:  Initialize Script Logging
         Parameters:
@@ -100,13 +108,13 @@ FUNCTIONS
             file_name (str): File Name (default: '')
             gvar_item (str): Global Variable (default: '__tracer__')
         Returns:    True (bool)
-    
+
     trace_workflow(frame: inspect.FrameInfo = None) -> bool
         Objective:  Trace Workflow/Execution
         Parameters:
             frame (inspect.FrameInfo): Frame Information (default: None)
         Returns:    True (bool)
-    
+
     unit_test(value: False) -> True
         Objective:  Unit Testing function
         Parameters:
@@ -115,11 +123,11 @@ FUNCTIONS
 
 DATA
     __empty__ = ''
-    __revparse__ = {'absolute_git_dir': '.repos/devops/fra...
+    __revparse__ = {'absolute_git_dir': '.repos/devops/res...
     __space__ = ' '
     __tracer__ = False
-    datestamp = '231112'
-    datetime_stamp = '231112-165624'
+    datestamp = '240327'
+    datetime_stamp = '240327-091216'
 
 FILE
     core/core_toolset.py

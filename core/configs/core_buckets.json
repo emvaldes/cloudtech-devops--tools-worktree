@@ -199,8 +199,16 @@
                                                 "date": "0"
                                             },
                                             {
-                                                "id": "sharepoint",
-                                                "name": "sharepoint",
+                                                "id": "mssp_features",
+                                                "name": "mssp_features",
+                                                "type": "log",
+                                                "size": "0 bytes",
+                                                "hash": "",
+                                                "date": "0"
+                                            },
+                                            {
+                                                "id": "mssp_storage",
+                                                "name": "mssp_storage",
                                                 "type": "log",
                                                 "size": "0 bytes",
                                                 "hash": "",
@@ -394,8 +402,16 @@
                                         "date": "0"
                                     },
                                     {
-                                        "id": "sharepoint",
-                                        "name": "sharepoint",
+                                        "id": "mssp_features",
+                                        "name": "mssp_features",
+                                        "type": "md",
+                                        "size": "0 bytes",
+                                        "hash": "",
+                                        "date": "0"
+                                    },
+                                    {
+                                        "id": "mssp_storage",
+                                        "name": "mssp_storage",
                                         "type": "md",
                                         "size": "0 bytes",
                                         "hash": "",

@@ -1,8 +1,8 @@
 ============================= test session starts ==============================
-platform darwin -- Python 3.11.6, pytest-7.4.2, pluggy-1.2.0 -- /usr/local/opt/python@3.11/bin/python3.11
+platform darwin -- Python 3.12.2, pytest-8.1.1, pluggy-1.4.0 -- /usr/local/opt/python@3.12/bin/python3.12
 cachedir: .pytest_cache
-rootdir: /Users/emvaldes/.repos/devops/framework/worktree
-plugins: cov-4.1.0
+rootdir: /Users/emvaldes/.repos/devops/restapi/tools/worktree
+plugins: cov-5.0.0
 collecting ... collected 0 items
 
-============================ no tests ran in 0.00s =============================
+============================ no tests ran in 0.01s =============================
